@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<!--
+	This design has been tested in the following browsers. Any issues are stated below.
+
+	Mozilla Firefox 1.0: (Crashes due to JavaScript.)
+	Fieldset's right border doesn't show on auto aligned forms.
+
+	Mozilla Firefox 1.5:
+	Fieldset's right border doesn't show on auto aligned forms.
+
+	Mozilla Firefox 2.0:
+	Fieldset's right border doesn't show on auto aligned forms.
+
+	Mozilla Firefox 3.0:
+
+	Mozilla Firefox 3.5:
+
+	Mozilla Firefox 3.6:
+
+	Google Chrome 2.0:
+
+	Google Chrome 3.0:
+
+	Google Chrome 4.0:
+
+	MS Internet Explorer 5.01:
+	Full width textarea extends too far.
+	jQuery UI styled form is not visible and not accessible.
+	Centering using the <center> workaround will center all the form's content.
+	Won't automatically clear content after forms without a fieldset.
+	Custom fieldset's border is not dotted.
+	Centered buttons don't work.
+
+	MS Internet Explorer 5.5:
+	Centering using the <center> workaround will center all the form's content.
+	Won't automatically clear content after forms without a fieldset.
+	Custom fieldset's border displays through title.
+	Centered buttons don't work.
+
+	MS Internet Explorer 6:
+	Full width textarea is pushed below its label.
+	When custom fieldset's title is colored, all fieldsets' titles get colored.
+	Custom fieldset's border displays through title.
+	Centered buttons don't work.
+
+	MS Internet Explorer 7:
+	When custom fieldset's title is colored, all fieldsets' titles get colored.
+	Custom Fieldset's border displays through title.
+
+	MS Internet Explorer 8:
+	When custom fieldset's title is colored, all fieldsets' titles get colored.
+	Custom Fieldset's border displays through title.
+
+	Opera 8:
+
+	Opera 9:
+	jQuery UI styled checkbox doesn't show a check.
+
+	Opera 10:
+	A horizontal scrollbar appears with full width elements.
+
+	Apple Safari 3:
+
+	Apple Safari 4:
+	-->
+	<title>Pines Form</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+	<!-- BEGIN PINES FORM CSS -->
+	<link href="pform.css" media="all" rel="stylesheet" type="text/css" />
+	<!--[if lt IE 8]>
+	<link href="pform-ie-lt-8.css" media="all" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if lt IE 6]>
+	<link href="pform-ie-lt-6.css" media="all" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!-- END PINES FORM CSS -->
+
+	<!-- This is for the jQuery UI styled form. -->
+	<style type="text/css">
+		/* <![CDATA[ */
+		.pf-form.pform_jqui {
+			padding: 1em;
+		}
+		.pf-form.pform_jqui .pf-heading * {
+			font-weight: bold !important;
+			margin-left: .5em;
+			margin-right: .5em;
+		}
+		.pf-form.pform_jqui .pf-field.ui-widget-content {
+			padding: 0.4em 1em;
+		}
+		/* ]]> */
+	</style>
+
+	<!-- This is how to change the size. -->
+	<style type="text/css">
+		/* <![CDATA[ */
+		.pf-form.pform_custom {
+			width: 311px !important;
+		}
+		.pf-form.pform_custom div.pf-element .pf-label, .pf-form.pform_custom div.pf-element .pf-note {
+			width: 130px !important; /* Width of labels. */
+		}
+		.pf-form.pform_custom div.pf-element .pf-group {
+			margin-left: 130px !important; /* Same as width of labels. */
+		}
+		.pf-form.pform_custom div.pf-buttons {
+			padding-left: 115px !important; /* Width of labels + margin to inputs - button spacing. */
+		}
+		.pf-form.pform_custom div.pf-buttons.pf-centered {
+			padding-left: 0 !important;
+		}
+		/* ]]> */
+	</style>
+	<!--[if lt IE 7]>
+	<style type="text/css">
+		.pf-form.pform_custom div.pf-buttons {
+			width: 176px !important; /* Custom form width - custom button div left padding - 20px (for IE's default padding.) */
+		}
+	</style>
+	<![endif]-->
+
+	<!-- This is an example customization. -->
+	<style type="text/css">
+		/* <![CDATA[ */
+		.pf-form.pform_custom {
+			font-family: sans-serif;
+			font-size: 13px;
+			margin: 0 auto;
+			color: #008;
+		}
+		.pf-form.pform_custom fieldset {
+			border: 1px #008 dotted;
+		}
+		.pf-form.pform_custom div.pf-heading {
+			border-bottom-color: #008;
+			border-bottom-style: dotted;
+		}
+		.pf-form.pform_custom div.pf-element .pf-label, .pf-form.pform_custom div.pf-element .pf-note {
+			text-align: right;
+		}
+		.pf-form.pform_custom div.pf-element .pf-note {
+			font-size: 75%;
+			color: #55A;
+		}
+		.pf-form.pform_custom div.pf-element .pf-field, .pf-form.pform_custom div.pf-buttons .pf-button {
+			color: white;
+			border-width: 1px;
+			border-color: #69F;
+			background-color: #88C;
+		}
+		.pf-form.pform_custom div.pf-element .pf-field {
+			border-style: inset;
+		}
+		.pf-form.pform_custom div.pf-buttons .pf-button {
+			border-style: outset;
+		}
+		/* ]]> */
+	</style>
+
+	<!-- Make this page a little more presentable. -->
+	<style type="text/css">
+		/* <![CDATA[ */
+		html, body {
+			font-family: "Trebuchet MS",Helvetica,sans-serif;
+		}
+		body {
+			padding: 0 10px 10px 10px;
+		}
+		.pretty {
+			font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
+		}
+		#tabs {
+			font-size: .8em;
+		}
+		#tabs > div {
+			font-size: 1.1em;
+		}
+		/* Custom styling. */
+		/* .pf-form fieldset legend, .pf-form .pf-heading h1 {
+			font-size: 150%;
+		} */
+		.pf-form div.pf-element .pf-label, .pf-form div.pf-element .pf-note {
+			width: 230px; /* Width of labels. */
+		}
+		/* .pf-form div.pf-element .pf-note {
+			font-size: 60%;
+		} */
+		.pf-form div.pf-element .pf-group {
+			margin-left: 230px; /* Same as width of labels. */
+		}
+		.pf-form div.pf-element .pf-field.pf-full-width {
+			margin-left: 235px; /* Width of labels + margin between inputs and labels. */
+		}
+		.pf-form div.pf-buttons {
+			padding-left: 215px; /* Width of labels + margin to inputs - button spacing. */
+		}
+		/* ]]> */
+	</style>
+
+	<!-- This is for the jQuery UI styled form. -->
+	<link href="comet/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+
+	<!-- Uncomment the next line to use Firebug Lite for testing in non-Mozilla browsers.
+	<script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script> -->
+</head>
+<body>
+	<div class="pretty">
+		<h1>Pines Form</h1>
+		<p>Pines Form is a CSS design for HTML and XHTML forms. It can be used in your own web project. All the code on this page is licensed under the GNU Affero GPL, as it is part of the <a href="http://sourceforge.net/projects/pines/">Pines</a> project.</p>
+		<p>Pines Form was designed with the goal of providing beauty, flexibility, customizeable design, hack/JavaScript free code, and sensible, valid XHTML1.0/XHTML1.1/CSS. You can use the buttons at the bottom of this page to validate it as XHTML 1.0 Strict, XHTML 1.1, and CSS 2.1.</p>
+		<p>Without further adieu, the examples:</p>
+	</div>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		$(function(){
+			$("#tabs").tabs();
+		});
+		// ]]>
+	</script>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-extensive">Extensive Example</a></li>
+			<li><a href="#tab-jqui">jQuery UI Styling</a></li>
+			<li><a href="#tab-custom">Custom Styling</a></li>
+			<li><a href="#tab-verify">Verification Form</a></li>
+			<li><a href="#tab-noborder">Without Border</a></li>
+			<li><a href="#tab-twocols">Two Columns</a></li>
+		</ul>
+		<div id="tab-extensive">
+			<form class="pf-form" action="" method="post">
+				<fieldset>
+					<legend>Extensive Example</legend>
+					<div class="pf-element pf-heading">
+						<p>This form is an example, and this is a description of it.</p>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<input class="pf-field" type="text" name="test" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">This is also a test.</span>
+							<span class="pf-note">99 bottles of beer on the wall.</span>
+							<input class="pf-field" type="text" name="test2" style="width: 400px;" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">This is a test.</span>
+							<span class="pf-note">99 bottles of beer.</span>
+							<span class="pf-field">Fill in the <input type="text" name="test" size="5" />.</span>
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">Is this a test?</span>
+							<span class="pf-note">Take one down.</span>
+							<input class="pf-field" type="checkbox" name="checktest" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">Is this really a test?</span>
+						<span class="pf-note">Pass it around.</span>
+						<div class="pf-group">
+							<label><input class="pf-field" type="radio" name="radiotest" />Yes</label>
+							<label><input class="pf-field" type="radio" name="radiotest" />No</label>
+						</div>
+					</div>
+					<div class="pf-element pf-heading">
+						<h1>Foods</h1>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">What's your favorite food?</span>
+						<span class="pf-note">98 bottles of beer on the wall.</span>
+						<div class="pf-group">
+							<label><input class="pf-field" type="radio" name="radiotest" />Hot Dogs</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Hamburgers</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Cheeseburgers</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Sushi</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Pizza</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Steak</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Ham</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Turkey</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Mashed Potatoes</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Eggs</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Bacon</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Cake</label><br />
+							<label><input class="pf-field" type="radio" name="radiotest" />Ice Cream</label><br />
+						</div>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">What foods do you like?</span>
+						<span class="pf-note">Hold CTRL to select multiples.</span>
+						<select class="pf-field" name="likefoods" multiple="multiple" size="4">
+							<option>Hot Dogs</option>
+							<option>Hamburgers</option>
+							<option>Cheeseburgers</option>
+							<option>Sushi</option>
+							<option>Pizza</option>
+							<option>Steak</option>
+							<option>Ham</option>
+							<option>Turkey</option>
+							<option>Mashed Potatoes</option>
+							<option>Eggs</option>
+							<option>Bacon</option>
+							<option>Cake</option>
+							<option>Ice Cream</option>
+						</select>
+					</div>
+					<div class="pf-element pf-heading">
+						<h1>More Tests</h1>
+					</div>
+					<!-- This line break is required for Firefox 1.5 if you follow an "pf-element" div with a "pf-group" fieldset.
+					(https://bugzilla.mozilla.org/show_bug.cgi?id=309550) -->
+					<br />
+					<fieldset class="pf-group">
+						<legend>Complex Tests</legend>
+						<div class="pf-element pf-heading">
+							<p>These tests require a complex grasp on reality to correctly comprehend.</p>
+						</div>
+						<div class="pf-element">
+							<label>
+								<span class="pf-label">This is a complex test.</span>
+								<span class="pf-note">Not really.</span>
+								<select class="pf-field" name="complex">
+									<option>This is an option.</option>
+									<option>This is another option.</option>
+								</select>
+							</label>
+						</div>
+						<div class="pf-element">
+							<label>
+								<span class="pf-label">This is a long complex test.</span>
+								<select class="pf-field" name="longcomplex" size="6">
+									<option>1. This is a lot of options.</option>
+									<option>2. This is a lot of options.</option>
+									<option>3. This is a lot of options.</option>
+									<option>4. This is a lot of options.</option>
+									<option>5. This is a lot of options.</option>
+									<option>6. This is a lot of options.</option>
+									<option>7. This is a lot of options.</option>
+									<option>8. This is a lot of options.</option>
+									<option>9. This is a lot of options.</option>
+									<option>10. This is a lot of options.</option>
+									<option>11. This is a lot of options.</option>
+									<option>12. This is a lot of options.</option>
+									<option>13. This is a lot of options.</option>
+									<option>14. This is a lot of options.</option>
+									<option>15. This is a lot of options.</option>
+									<option>16. This is a lot of options.</option>
+									<option>17. This is a lot of options.</option>
+									<option>18. This is a lot of options.</option>
+									<option>19. This is a lot of options.</option>
+									<option>20. This is a lot of options.</option>
+								</select>
+							</label>
+						</div>
+					</fieldset>
+					<fieldset class="pf-group">
+						<legend>Simple Tests</legend>
+						<div class="pf-element">
+							<label>
+								<span class="pf-label">This is a test.</span>
+								<span class="pf-note">This is a note about something.</span>
+								<input class="pf-field" type="text" name="test" />
+							</label>
+						</div>
+					</fieldset>
+					<div class="pf-element pf-full-width">
+						<label>
+							<span class="pf-label">What do you think of my tests?</span>
+							<span class="pf-note">I won't actually be reading this, it's just an example.</span>
+							<span class="pf-note">You can't even submit this form. It won't go anywhere.</span>
+							<span class="pf-field pf-full-width"><textarea style="width: 100%;" name="comment" rows="5" cols="30"></textarea></span>
+						</label>
+					</div>
+					<div class="pf-element pf-buttons">
+						<input class="pf-button" type="submit" name="submit" value="Submit" />
+						<input class="pf-button" type="reset" name="reset" value="Reset" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div id="tab-jqui">
+			<form class="pf-form pform_jqui ui-widget ui-widget-content ui-corner-all ui-helper-clearfix" action="" method="post">
+				<div class="pf-element pf-heading ui-widget-header ui-corner-all">
+					<h1>jQuery UI Styling</h1>
+					<p>This form is styled with jQuery UI.</p>
+				</div>
+				<div class="pf-element">
+					<label><span class="pf-label">Username</span>
+					<input class="pf-field ui-widget-content ui-corner-all" type="text" name="username" /></label>
+				</div>
+				<div class="pf-element">
+					<label><span class="pf-label">Password</span>
+					<input class="pf-field ui-widget-content ui-corner-all" type="password" name="password" /></label>
+				</div>
+				<div class="pf-element">
+					<label><span class="pf-label">Remember Me</span>
+					<span class="pf-note ui-priority-secondary">Lasts for 2 weeks.</span>
+					<input class="pf-field ui-widget-content ui-corner-all" type="checkbox" name="remember" /></label>
+				</div>
+				<div class="pf-element pf-buttons">
+					<input class="pf-button ui-state-default ui-button ui-widget ui-corner-all ui-priority-primary" type="submit" name="submit" value="Submit"
+							   onfocus="$(this).addClass('ui-state-focus');"
+							   onblur="$(this).removeClass('ui-state-focus');"
+							   onmouseover="$(this).addClass('ui-state-hover');"
+							   onmouseout="$(this).removeClass('ui-state-hover');"
+							   onmousedown="$(this).addClass('ui-state-active');"
+							   onmouseup="$(this).removeClass('ui-state-active');" />
+					<input class="pf-button ui-state-default ui-button ui-widget ui-corner-all ui-priority-secondary" type="reset" name="reset" value="Reset"
+							   onfocus="$(this).addClass('ui-state-focus');"
+							   onblur="$(this).removeClass('ui-state-focus');"
+							   onmouseover="$(this).addClass('ui-state-hover');"
+							   onmouseout="$(this).removeClass('ui-state-hover');"
+							   onmousedown="$(this).addClass('ui-state-active');"
+							   onmouseup="$(this).removeClass('ui-state-active');" />
+				</div>
+			</form>
+		</div>
+		<div id="tab-custom">
+			<!-- Use these conditional comments for centering if you support IE 5.5 -->
+			<!--[if lt IE 6]>
+			<center>
+			<![endif]-->
+			<form class="pf-form pform_custom" action="" method="post">
+				<fieldset>
+					<legend>Custom Styling</legend>
+					<div class="pf-element pf-heading">
+						<p>This form is custom styled.</p>
+					</div>
+					<div class="pf-element">
+						<label><span class="pf-label">Username</span>
+						<input class="pf-field" type="text" name="username" style="width: 130px;" /></label>
+					</div>
+					<div class="pf-element">
+						<label><span class="pf-label">Password</span>
+						<input class="pf-field" type="password" name="password" style="width: 130px;" /></label>
+					</div>
+					<div class="pf-element">
+						<label><span class="pf-label">Remember Me</span>
+						<span class="pf-note">Lasts for 2 weeks.</span>
+						<input class="pf-field" type="checkbox" name="remember" /></label>
+					</div>
+					<div class="pf-element pf-buttons pf-centered">
+						<input class="pf-button" type="submit" name="submit" value="Submit" />
+						<input class="pf-button" type="reset" name="reset" value="Reset" />
+					</div>
+				</fieldset>
+			</form>
+			<!--[if lt IE 6]>
+			</center>
+			<![endif]-->
+		</div>
+		<div id="tab-verify">
+			<form class="pf-form" action="" method="post">
+				<fieldset>
+					<legend>Verify this Information</legend>
+					<div class="pf-element">
+						<span class="pf-label">Mary had a little...</span>
+						<span class="pf-note">This is not optional!</span>
+						<span class="pf-field">Lamb.</span>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">Whose fleece was white as...</span>
+						<span class="pf-field">Baking soda.</span>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">Everywhere that Mary went...</span>
+						<span class="pf-field">The lamb was Abe Vigoda.</span>
+					</div>
+					<div class="pf-element pf-buttons">
+						<button class="pf-button" type="submit" name="submit">This is Correct</button>
+						<button class="pf-button" type="button" name="changes">Make Changes</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div id="tab-noborder">
+			<form class="pf-form" action="" method="post">
+				<div class="pf-element pf-heading">
+					<h1>Fixed Width - No Border</h1>
+					<p>This form has fixed width elements and no border. This can be done by changing either the markup, or the CSS.</p>
+				</div>
+				<div class="pf-element">
+					<label>
+						<span class="pf-label">This is a test.</span>
+						<span class="pf-note">This is a note about something.</span>
+						<input class="pf-field" type="text" name="test" style="width: 400px" />
+					</label>
+				</div>
+				<div class="pf-element">
+					<label>
+						<span class="pf-label">What do you think of my tests?</span>
+						<textarea class="pf-field" name="comment" rows="5" cols="30" style="width: 400px"></textarea>
+					</label>
+				</div>
+				<div class="pf-element">
+					<span class="pf-note">Watch out for lions around the submit button.</span>
+				</div>
+				<div class="pf-element pf-buttons">
+					<button class="pf-button" type="submit" name="submit">Submit</button>
+					<span class="pf-field">Lion.</span>
+					<button class="pf-button" type="reset" name="reset">Reset</button>
+				</div>
+			</form>
+			<!-- Anything after a form without a fieldset needs to be cleared if you support IE 5.5 -->
+			<br style="clear: both; height: 0;" />
+		</div>
+		<div id="tab-twocols">
+			<form class="pf-form pf-form-twocol" action="" method="post">
+				<fieldset>
+					<legend>Two Column Form</legend>
+					<div class="pf-element pf-heading">
+						<p>This form tests columns of elements to conserve space on wider screens. Try resizing the browser window.</p>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">1. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<input class="pf-field" type="text" name="test" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">2. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<input class="pf-field" type="text" name="test2" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">3. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<span class="pf-field">Fill in the <input type="text" name="test" size="5" />.</span>
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">4. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<input class="pf-field" type="checkbox" name="checktest" />
+						</label>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">5. This is a test.</span>
+						<span class="pf-note">This is a note about something.</span>
+						<div class="pf-group">
+							<label><input class="pf-field" type="radio" name="radiotest" />Yes</label>
+							<label><input class="pf-field" type="radio" name="radiotest" />No</label>
+						</div>
+					</div>
+					<div class="pf-element">
+						<span class="pf-label">6. This is a test.</span>
+						<span class="pf-note">This is a note about something.</span>
+						<select class="pf-field" name="likefoods" multiple="multiple" size="4">
+							<option>Hot Dogs</option>
+							<option>Hamburgers</option>
+							<option>Cheeseburgers</option>
+							<option>Sushi</option>
+							<option>Pizza</option>
+							<option>Steak</option>
+							<option>Ham</option>
+							<option>Turkey</option>
+							<option>Mashed Potatoes</option>
+							<option>Eggs</option>
+							<option>Bacon</option>
+							<option>Cake</option>
+							<option>Ice Cream</option>
+						</select>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">7. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<select class="pf-field" name="complex">
+								<option>This is an option.</option>
+								<option>This is another option.</option>
+							</select>
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">8. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<select class="pf-field" name="longcomplex" size="6">
+								<option>1. This is a lot of options.</option>
+								<option>2. This is a lot of options.</option>
+								<option>3. This is a lot of options.</option>
+								<option>4. This is a lot of options.</option>
+								<option>5. This is a lot of options.</option>
+								<option>6. This is a lot of options.</option>
+								<option>7. This is a lot of options.</option>
+								<option>8. This is a lot of options.</option>
+								<option>9. This is a lot of options.</option>
+								<option>10. This is a lot of options.</option>
+								<option>11. This is a lot of options.</option>
+								<option>12. This is a lot of options.</option>
+								<option>13. This is a lot of options.</option>
+								<option>14. This is a lot of options.</option>
+								<option>15. This is a lot of options.</option>
+								<option>16. This is a lot of options.</option>
+								<option>17. This is a lot of options.</option>
+								<option>18. This is a lot of options.</option>
+								<option>19. This is a lot of options.</option>
+								<option>20. This is a lot of options.</option>
+							</select>
+						</label>
+					</div>
+					<div class="pf-element">
+						<label>
+							<span class="pf-label">9. This is a test.</span>
+							<span class="pf-note">This is a note about something.</span>
+							<textarea class="pf-field" name="comment" rows="5" cols="30"></textarea>
+						</label>
+					</div>
+					<div class="pf-element pf-buttons pf-centered">
+						<input class="pf-button" type="submit" name="submit" value="Submit" />
+						<input class="pf-button" type="reset" name="reset" value="Reset" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<p style="margin-top: 2em; text-align: right;">
+		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml11-blue" alt="Valid XHTML 1.1" /></a>
+		<a href="http://validator.w3.org/check?uri=referer&amp;doctype=XHTML+1.0+Strict"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="Valid XHTML 1.0 Strict" /></a>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+	</p>
+</body>
+</html>
