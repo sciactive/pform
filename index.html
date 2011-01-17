@@ -202,9 +202,16 @@
 	</style>
 
 	<!-- This is for the jQuery UI styled form. -->
-	<link href="comet/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+	<script type="text/javascript">
+		// <![CDATA[
+		$(function(){
+			// If this is included normally, the page doesn't validate because jQuery UI's CSS doesn't validate.
+			$("head").append('<link href="comet/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />');
+		});
+		// ]]>
+	</script>
 
 	<!-- Uncomment the next line to use Firebug Lite for testing in non-Mozilla browsers.
 	<script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script> -->
