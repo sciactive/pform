@@ -214,20 +214,31 @@
 	</script>
 
 	<!-- Uncomment the next line to use Firebug Lite for testing in non-Mozilla browsers.
-	<script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script> -->
+	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
 </head>
 <body>
 	<div class="pretty">
 		<h1>Pines Form</h1>
 		<p>Pines Form is a CSS design for HTML and XHTML forms. It can be used in your own web project. All the code on this page is licensed under the GNU Affero GPL, as it is part of the <a href="http://sourceforge.net/projects/pines/">Pines</a> project.</p>
 		<p>Pines Form was designed with the goal of providing beauty, flexibility, customizeable design, hack/JavaScript free code, and sensible, valid XHTML1.0/XHTML1.1/CSS. You can use the buttons at the bottom of this page to validate it as XHTML 1.0 Strict, XHTML 1.1, and CSS 2.1.</p>
-		<p>Without further adieu, the examples:</p>
 	</div>
 
 	<script type="text/javascript">
 		// <![CDATA[
 		$(function(){
 			$("#tabs").tabs();
+			
+			// Toggle borders in the float example.
+			var toggle_boxes = function(){
+				var new_border = ($(this).is(":checked") ? "1px" : "0");
+				$(this)
+				.closest(".pf-element")
+				.find(".pf-label, .pf-note, .pf-field > div")
+				.css("border-width", new_border);
+			};
+			$("#tab-floats input:checkbox").click(toggle_boxes).each(function(){
+				toggle_boxes.call(this);
+			});
 		});
 		// ]]>
 	</script>
@@ -239,6 +250,7 @@
 			<li><a href="#tab-verify">Verification Form</a></li>
 			<li><a href="#tab-noborder">Without Border</a></li>
 			<li><a href="#tab-twocols">Two Columns</a></li>
+			<li><a href="#tab-floats">Floats in Fields</a></li>
 		</ul>
 		<div id="tab-extensive">
 			<form class="pf-form" action="" method="post">
@@ -327,7 +339,7 @@
 					<div class="pf-element pf-heading">
 						<h1>More Tests</h1>
 					</div>
-					<!-- This line break is required for Firefox 1.5 if you follow an "pf-element" div with a "pf-group" fieldset.
+					<!-- This line break is required for Firefox 1.5 if you follow a "pf-element" div with a "pf-group" fieldset.
 					(https://bugzilla.mozilla.org/show_bug.cgi?id=309550) -->
 					<br />
 					<fieldset class="pf-group">
@@ -637,6 +649,60 @@
 					</div>
 				</fieldset>
 			</form>
+		</div>
+		<div id="tab-floats">
+			<div class="pf-form">
+				<div class="pf-element">
+					In the following examples, use the boxes to toggle borders
+					around each section.
+					<ul>
+						<li>IE6: The examples and the solution don't work.</li>
+						<li>IE7: The problem doesn't happen anyway.</li>
+					</ul>
+				</div>
+				<!-- This line break is required for Firefox 1.5 if you follow a "pf-element" div with a "pf-group" fieldset.
+				(https://bugzilla.mozilla.org/show_bug.cgi?id=309550) -->
+				<br />
+				<fieldset class="pf-group">
+					<legend>The Problem</legend>
+					<div class="pf-element pf-heading">
+						<p>
+							When a floated element goes in a field with a note
+							present, the note will push the element down below
+							the label.
+						</p>
+					</div>
+					<div class="pf-element pf-full-width">
+						<span class="pf-label" style="border: 0 solid red;">A Label</span>
+						<span class="pf-note" style="border: 0 solid green;">A note.</span>
+						<div class="pf-field pf-full-width">
+							<div style="border: 0 solid blue; float: left;">
+								<label><input type="checkbox" checked="checked" /> This div is floated left.</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset class="pf-group">
+					<legend>The Solution</legend>
+					<div class="pf-element pf-heading">
+						<p>
+							To fix this problem, place the note inside the label
+							element.
+						</p>
+					</div>
+					<div class="pf-element pf-full-width">
+						<span class="pf-label" style="border: 0 solid red;">
+							A Label
+							<span class="pf-note" style="border: 0 solid green;">A note.</span>
+						</span>
+						<div class="pf-field pf-full-width">
+							<div style="border: 0 solid blue; float: left;">
+								<label><input type="checkbox" checked="checked" /> This div is floated left.</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
 		</div>
 	</div>
 
