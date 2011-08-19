@@ -1,4 +1,8 @@
-/* Required for IE 5.5 and lower. */
+/*
+Pines Form 1.1
+
+Required for IE 5.5 and lower.
+*/
 .pf-form {
 	height: auto; /* Undoes our IE6 fix from above. */
 	clear: left; /* Fixes forms aligning right of floated elements. */

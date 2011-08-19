@@ -5,66 +5,58 @@
 	<!--
 	This design has been tested in the following browsers. Any issues are stated below.
 
-	Mozilla Firefox 1.0: (Crashes due to JavaScript.)
+	Mozilla Firefox 1.0 (Crashes due to JavaScript.)
 	Fieldset's right border doesn't show on auto aligned forms.
 
-	Mozilla Firefox 1.5:
-	Fieldset's right border doesn't show on auto aligned forms.
+	Mozilla Firefox 1.5
+		Fieldset's right border doesn't show on auto aligned forms.
 
-	Mozilla Firefox 2.0:
-	Fieldset's right border doesn't show on auto aligned forms.
+	Mozilla Firefox 2.0
+		Fieldset's right border doesn't show on auto aligned forms.
 
-	Mozilla Firefox 3.0:
+	Mozilla Firefox >= 3.0
 
-	Mozilla Firefox 3.5:
+	Google Chrome >= 2.0
 
-	Mozilla Firefox 3.6:
+	MS Internet Explorer 5.01
+		Full width textarea extends too far.
+		jQuery UI styled form is not visible and not accessible.
+		Centering using the <center> workaround will center all the form's content.
+		Won't automatically clear content after forms without a fieldset.
+		Custom fieldset's border is not dotted.
+		Centered buttons don't work.
 
-	Google Chrome 2.0:
+	MS Internet Explorer 5.5
+		Centering using the <center> workaround will center all the form's content.
+		Won't automatically clear content after forms without a fieldset.
+		Custom fieldset's border displays through title.
+		Centered buttons don't work.
 
-	Google Chrome 3.0:
+	MS Internet Explorer 6
+		Full width textarea is pushed below its label.
+		Full width textarea is too far to the right.
+		When custom fieldset's title is colored, all fieldsets' titles get colored.
+		Custom fieldset's border displays through title.
+		Centered buttons don't work.
 
-	Google Chrome 4.0:
+	MS Internet Explorer 7
+		Full width textarea is pushed below its label.
+		When custom fieldset's title is colored, all fieldsets' titles get colored.
+		Custom Fieldset's border displays through title.
 
-	MS Internet Explorer 5.01:
-	Full width textarea extends too far.
-	jQuery UI styled form is not visible and not accessible.
-	Centering using the <center> workaround will center all the form's content.
-	Won't automatically clear content after forms without a fieldset.
-	Custom fieldset's border is not dotted.
-	Centered buttons don't work.
+	MS Internet Explorer 8
+		When custom fieldset's title is colored, all fieldsets' titles get colored.
+		Custom Fieldset's border displays through title.
 
-	MS Internet Explorer 5.5:
-	Centering using the <center> workaround will center all the form's content.
-	Won't automatically clear content after forms without a fieldset.
-	Custom fieldset's border displays through title.
-	Centered buttons don't work.
+	Opera 8
 
-	MS Internet Explorer 6:
-	Full width textarea is pushed below its label.
-	When custom fieldset's title is colored, all fieldsets' titles get colored.
-	Custom fieldset's border displays through title.
-	Centered buttons don't work.
+	Opera 9
+		jQuery UI styled checkbox doesn't show a check.
 
-	MS Internet Explorer 7:
-	When custom fieldset's title is colored, all fieldsets' titles get colored.
-	Custom Fieldset's border displays through title.
+	Opera 10
+		A horizontal scrollbar appears with full width elements.
 
-	MS Internet Explorer 8:
-	When custom fieldset's title is colored, all fieldsets' titles get colored.
-	Custom Fieldset's border displays through title.
-
-	Opera 8:
-
-	Opera 9:
-	jQuery UI styled checkbox doesn't show a check.
-
-	Opera 10:
-	A horizontal scrollbar appears with full width elements.
-
-	Apple Safari 3:
-
-	Apple Safari 4:
+	Apple Safari >= 3
 	-->
 	<title>Pines Form</title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
@@ -99,6 +91,7 @@
 	<style type="text/css">
 		/* <![CDATA[ */
 		.pf-form.pform_custom {
+			display: block;
 			width: 311px !important;
 		}
 		.pf-form.pform_custom div.pf-element .pf-label, .pf-form.pform_custom div.pf-element .pf-note {
