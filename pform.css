@@ -65,6 +65,10 @@ link: http://sciactive.com/
 	font-size: 70%;
 	color: #555;
 }
+.pf-form .pf-element .pf-required {
+	margin-left: .2em;
+	color: #f00;
+}
 .pf-form .pf-element .pf-group {
 	 margin-left: 160px; /* Same as width of labels. */
 }
