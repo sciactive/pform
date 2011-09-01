@@ -1,7 +1,9 @@
 /*
 Pines Form 1.1
 
-license: http://www.gnu.org/licenses/agpl-3.0.html
+license: http://www.gnu.org/licenses/gpl.html
+license: http://www.gnu.org/licenses/lgpl.html
+license: http://www.mozilla.org/MPL/MPL-1.1.html
 author: Hunter Perrin <hunter@sciactive.com>
 copyright: SciActive.com
 link: http://sciactive.com/
@@ -66,7 +68,6 @@ link: http://sciactive.com/
 	color: #555;
 }
 .pf-form .pf-element .pf-required {
-	margin-left: .2em;
 	color: #f00;
 }
 .pf-form .pf-element .pf-group {

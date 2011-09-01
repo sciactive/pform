@@ -158,16 +158,14 @@
 	<style type="text/css">
 		/* <![CDATA[ */
 		html, body {
-			font-family: "Trebuchet MS",Helvetica,sans-serif;
+			font-family: Arial,sans-serif;
+			font-size: 12px;
 		}
 		body {
 			padding: 0 10px 10px 10px;
 		}
-		.pretty {
-			font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
-		}
 		#tabs {
-			font-size: .8em;
+			font-size: 1em;
 		}
 		#tabs > div {
 			font-size: 1.1em;
@@ -210,10 +208,10 @@
 	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
 </head>
 <body>
-	<div class="pretty">
-		<h1>Pines Form</h1>
-		<p>Pines Form is a CSS design for HTML and XHTML forms. It can be used in your own web project. All the code on this page is licensed under the GNU Affero GPL, as it is part of the <a href="http://sourceforge.net/projects/pines/">Pines</a> project.</p>
-		<p>Pines Form was designed with the goal of providing beauty, flexibility, customizeable design, hack/JavaScript free code, and sensible, valid XHTML1.0/XHTML1.1/CSS. You can use the buttons at the bottom of this page to validate it as XHTML 1.0 Strict, XHTML 1.1, and CSS 2.1.</p>
+	<div>
+		<h1 style="text-align: center;"><a href="http://sourceforge.net/projects/pines/" style="float: right;"><img src="includes/default_logo.png" alt="Pines" style="border: none;" /></a>Pines Form</h1>
+		<p>Pines Form is a CSS design for HTML and XHTML forms. It can be used in your own web project. Pines Form is distributed under the <a href="http://www.gnu.org/licenses/gpl.html" onclick="window.open(this.href); return false;">GPL</a>, <a href="http://www.gnu.org/licenses/lgpl.html" onclick="window.open(this.href); return false;">LGPL</a>, and <a href="http://www.mozilla.org/MPL/MPL-1.1.html" onclick="window.open(this.href); return false;">MPL</a>. This triple copyleft licensing model avoids incompatibility with other open source licenses.</p>
+		<p>Pines Form was designed with the goal of providing beauty, flexibility, customizeable design, hack/JavaScript free code, and sensible, valid (X)HTML/CSS. You can use the buttons at the bottom of this page to validate it as XHTML 1.0 Strict, XHTML 1.1, and CSS 2.1.</p>
 	</div>
 
 	<script type="text/javascript">
@@ -254,21 +252,21 @@
 					</div>
 					<div class="pf-element">
 						<label>
-							<span class="pf-label">This is a test.<span class="pf-required">*</span></span>
+							<span class="pf-label">This is a test. <span class="pf-required">*</span></span>
 							<span class="pf-note">This is a note about something.</span>
 							<input class="pf-field" type="text" name="test" />
 						</label>
 					</div>
 					<div class="pf-element">
 						<label>
-							<span class="pf-label">This is also a test.<span class="pf-required">*</span></span>
+							<span class="pf-label">This is also a test. <span class="pf-required">*</span></span>
 							<span class="pf-note">99 bottles of beer on the wall.</span>
 							<input class="pf-field" type="text" name="test2" style="width: 400px;" />
 						</label>
 					</div>
 					<div class="pf-element">
 						<label>
-							<span class="pf-label">This is a test.<span class="pf-required">*</span></span>
+							<span class="pf-label">Try clicking these labels. <span class="pf-required">*</span></span>
 							<span class="pf-note">99 bottles of beer.</span>
 							<span class="pf-field">Fill in the <input type="text" name="test" size="5" />.</span>
 						</label>
@@ -342,7 +340,7 @@
 						</div>
 						<div class="pf-element">
 							<label>
-								<span class="pf-label">This is a complex test.<span class="pf-required">*</span></span>
+								<span class="pf-label">This is a complex test. <span class="pf-required">*</span></span>
 								<span class="pf-note">Not really.</span>
 								<select class="pf-field" name="complex">
 									<option>This is an option.</option>
@@ -390,7 +388,7 @@
 					</fieldset>
 					<div class="pf-element pf-full-width">
 						<label>
-							<span class="pf-label">What do you think of my tests?<span class="pf-required">*</span></span>
+							<span class="pf-label">What do you think of my tests? <span class="pf-required">*</span></span>
 							<span class="pf-note">I won't actually be reading this, it's just an example.</span>
 							<span class="pf-note">You can't even submit this form. It won't go anywhere.</span>
 							<span class="pf-field pf-full-width"><textarea style="width: 100%;" name="comment" rows="5" cols="30"></textarea></span>
@@ -506,7 +504,7 @@
 				</div>
 				<div class="pf-element">
 					<label>
-						<span class="pf-label">This is a test.<span class="pf-required">*</span></span>
+						<span class="pf-label">This is a test. <span class="pf-required">*</span></span>
 						<span class="pf-note">This is a note about something.</span>
 						<input class="pf-field" type="text" name="test" style="width: 400px" />
 					</label>
@@ -646,8 +644,7 @@
 		<div id="tab-floats">
 			<div class="pf-form">
 				<div class="pf-element">
-					In the following examples, use the boxes to toggle borders
-					around each section.
+					In the following examples, use the checkboxes to toggle borders around each section.
 					<ul>
 						<li>IE6: The examples and the solution don't work.</li>
 						<li>IE7: The problem doesn't happen anyway.</li>
@@ -659,11 +656,7 @@
 				<fieldset class="pf-group">
 					<legend>The Problem</legend>
 					<div class="pf-element pf-heading">
-						<p>
-							When a floated element goes in a field with a note
-							present, the note will push the element down below
-							the label.
-						</p>
+						<p>When a floated element goes in a field with a note present, the note will push the element down below the label.</p>
 					</div>
 					<div class="pf-element pf-full-width">
 						<span class="pf-label" style="border: 0 solid red;">A Label</span>
@@ -678,10 +671,7 @@
 				<fieldset class="pf-group">
 					<legend>The Solution</legend>
 					<div class="pf-element pf-heading">
-						<p>
-							To fix this problem, place the note inside the label
-							element.
-						</p>
+						<p>To fix this problem, place the note inside the label element.</p>
 					</div>
 					<div class="pf-element pf-full-width">
 						<span class="pf-label" style="border: 0 solid red;">
