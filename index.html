@@ -22,9 +22,15 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.js"></script>
 	<link href="comet/jquery-ui.css" media="all" rel="stylesheet" type="text/css" />
 
-	<!-- Bootstrap -->
+	<!-- Bootstrap (IE6 doesn't like it very much.) -->
+	<!--[if !IE]> -->
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<link href="bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<!-- <![endif]-->
+	<!--[if gt IE 6]>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<link href="bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<![endif]-->
 
 	<!-- This is for the jQuery UI styled form. -->
 	<style type="text/css">
@@ -43,66 +49,93 @@
 
 	<!-- This is how to change the size. -->
 	<style type="text/css">
-		.pf-form.pform_custom {
+		#ex-custom .pf-form {
 			display: block;
 			max-width: 311px !important;
 		}
-		.pf-form.pform_custom div.pf-element .pf-label, .pf-form.pform_custom div.pf-element .pf-note {
+		#ex-custom .pf-form div.pf-element .pf-label, #ex-custom .pf-form div.pf-element .pf-note {
 			width: 130px !important; /* Width of labels. */
 		}
-		.pf-form.pform_custom div.pf-element .pf-group {
+		#ex-custom .pf-form div.pf-element .pf-group {
 			margin-left: 130px !important; /* Same as width of labels. */
 		}
-		.pf-form.pform_custom div.pf-buttons {
+		#ex-custom .pf-form div.pf-buttons {
 			padding-left: 115px !important; /* Width of labels + margin to inputs - button spacing. */
 		}
-		.pf-form.pform_custom div.pf-buttons.pf-centered {
+		#ex-custom .pf-form div.pf-buttons.pf-centered {
 			padding-left: 0 !important;
 		}
 	</style>
+	<!-- And you need this for IE6. -->
 	<!--[if lt IE 7]>
 	<style type="text/css">
-		.pf-form.pform_custom div.pf-buttons {
+		#ex-custom .pf-form {
+			width: 311px !important;
+		}
+		#ex-custom .pf-form div.pf-buttons {
 			width: 176px !important; /* Custom form width - custom button div left padding - 20px (for IE's default padding.) */
 		}
 	</style>
 	<![endif]-->
 
-	<!-- This is an example customization. -->
 	<style type="text/css">
-		.pf-form.pform_custom {
+		/* This is an example customization. */
+		/* I don't use .pf-form.pform_custom here anymore because old IEs don't get it. */
+		#ex-custom .pf-form {
 			font-family: sans-serif;
 			font-size: 13px;
 			margin: 0 auto;
 			color: #008;
 		}
-		.pf-form.pform_custom fieldset {
+		#ex-custom .pf-form fieldset {
 			border: 1px #008 dotted;
 		}
-		.pf-form.pform_custom div.pf-heading {
+		/* I use div.pf-whatever here so it will be more specific than the ones in the pform stylesheet. */
+		#ex-custom .pf-form div.pf-heading {
 			border-bottom-color: #008;
 			border-bottom-style: dotted;
 		}
-		.pf-form.pform_custom div.pf-element .pf-note {
+		#ex-custom .pf-form div.pf-element .pf-note {
 			font-size: 75%;
 			color: #55A;
 		}
-		.pf-form.pform_custom div.pf-element .pf-field, .pf-form.pform_custom div.pf-buttons .pf-button {
+		#ex-custom .pf-form div.pf-element .pf-field, #ex-custom .pf-form div.pf-buttons .pf-button {
 			color: white;
 			border-width: 1px;
 			border-color: #69F;
 			background-color: #88C;
 		}
-		.pf-form.pform_custom div.pf-element .pf-field {
+		#ex-custom .pf-form div.pf-element .pf-field {
 			border-style: inset;
 		}
-		.pf-form.pform_custom div.pf-buttons .pf-button {
+		#ex-custom .pf-form div.pf-buttons .pf-button {
 			border-style: outset;
 		}
-	</style>
 
-	<!-- Make this page a little more presentable. -->
-	<style type="text/css">
+		/* Custom styling to change width. */
+		#ex-columns .pf-form .pf-element .pf-label, #ex-columns .pf-form .pf-element .pf-note {
+			width: 160px; /* Width of labels. */
+		}
+		#ex-columns .pf-form .pf-element .pf-group {
+			margin-left: 160px; /* Same as width of labels. */
+		}
+		#ex-columns .pf-form .pf-element .pf-field, #ex-columns .pf-form .pf-buttons .pf-button {
+			margin-left: 15px; /* Margin between inputs and labels. */
+		}
+		#ex-columns .pf-form .pf-element .pf-field.pf-full-width {
+			margin-left: 175px; /* Width of labels + margin between inputs and labels. */
+		}
+		/* This is here to show you how to do it, but commented out because these buttons are centered.
+		#ex-columns .pf-form .pf-buttons {
+			padding-left: 155px; /* Width of labels + margin to inputs - button spacing. *
+		}
+		*/
+		/* This is just to make it pretty. */
+		#ex-columns .pf-form .pf-element .pf-label {
+			font-weight: bold;
+		}
+
+		/* Not pform specific, just make this page a little more presentable. */
 		body {
 			padding: 40px 1em 1em;
 		}
@@ -135,10 +168,15 @@
 		.section-banner {
 			height: 90px;
 			padding-top: 150px;
+			clear: both;
 		}
 		.section-banner h2 {
 			font-size: 35px;
 			line-height: 35px;
+		}
+		body .pf-form .pf-heading * {
+			margin-top: .1em !important;
+			margin-bottom: .1em !important;
 		}
 		#copyright {
 			text-align: center;
@@ -234,28 +272,6 @@
 				line-height: 26px;
 			}
 		}
-		/* Custom styling to change width. */
-		#ex-columns .pf-form .pf-element .pf-label, #ex-columns .pf-form .pf-element .pf-note {
-			width: 160px; /* Width of labels. */
-		}
-		#ex-columns .pf-form .pf-element .pf-group {
-			margin-left: 160px; /* Same as width of labels. */
-		}
-		#ex-columns .pf-form .pf-element .pf-field, #ex-columns .pf-form .pf-buttons .pf-button {
-			margin-left: 15px; /* Margin between inputs and labels. */
-		}
-		#ex-columns .pf-form .pf-element .pf-field.pf-full-width {
-			margin-left: 175px; /* Width of labels + margin between inputs and labels. */
-		}
-		/* This is here to show you how to do it, but commented out because these buttons are centered.
-		#ex-columns .pf-form .pf-buttons {
-			padding-left: 155px; /* Width of labels + margin to inputs - button spacing. *
-		}
-		*/
-		/* This is just to make it pretty. */
-		#ex-columns .pf-form .pf-element .pf-label {
-			font-weight: bold;
-		}
 	</style>
 
 	<!-- Uncomment the next line to use Firebug Lite for testing in non-Mozilla browsers.
@@ -288,8 +304,8 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand" href="http://pinesframework.org/pform/" style="height: 40px; padding-top: 0; padding-bottom: 0;">
-					<img alt="Pines Logo" src="includes/pines-logo.png" style="margin: 3px 0; padding: 0; border: 0; vertical-align: middle;" />
-					<span style="line-heigth: 40px;">Pines Form</span>
+					<img alt="Pines Logo" src="includes/pines-logo.png" style="padding: 0; border: 0; vertical-align: middle;" />
+					<span style="line-height: 40px;">Pines Form</span>
 				</a>
 				<div class="nav-collapse">
 					<ul class="nav">
@@ -782,7 +798,7 @@
 				<!--[if lt IE 6]>
 				<center>
 				<![endif]-->
-				<form class="pf-form pf-labels-right pform_custom" action="#" method="post">
+				<form class="pf-form pf-labels-right" action="#" method="post">
 					<fieldset>
 						<legend>Custom Styling Form</legend>
 						<div class="pf-element pf-heading">
@@ -790,16 +806,16 @@
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Username</span>
-							<input class="pf-field" type="text" name="username" style="width: 130px;" /></label>
+								<input class="pf-field" type="text" name="username" style="width: 130px;" /></label>
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Password</span>
-							<input class="pf-field" type="password" name="password" style="width: 130px;" /></label>
+								<input class="pf-field" type="password" name="password" style="width: 130px;" /></label>
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Remember Me</span>
-							<span class="pf-note">Lasts for 2 weeks.</span>
-							<input class="pf-field" type="checkbox" name="remember" /></label>
+								<span class="pf-note">Lasts for 2 weeks.</span>
+								<input class="pf-field" type="checkbox" name="remember" /></label>
 						</div>
 						<div class="pf-element pf-buttons pf-centered">
 							<input class="pf-button" type="submit" name="submit" value="Submit" />
@@ -1057,110 +1073,123 @@
 					<div class="section-banner">
 						<h2>Browser Support</h2>
 					</div>
-					<div>
-						<p>
-							Pines Form has been tested in the following browsers. Any issues are stated below.
-						<p>
+					<p>
+						Pines Form has been tested in the following browsers. Any issues are stated below.
+					<p>
+					<div class="container-fluid">
+						<div class="row-fluid">
+							<div class="span6">
+								<h3 style="text-align: center;">Modern Browsers</h3>
 
-						<div class="well">
-							<h3>Mozilla Firefox 1.0 <small>(Crashes due to JavaScript.)</small></h3>
-							<ul>
-								<li>Fieldset's right border doesn't show on auto aligned forms.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Mozilla Firefox 3.0 and higher</h3>
+								</div>
 
-						<div class="well">
-							<h3>Mozilla Firefox 1.5</h3>
-							<ul>
-								<li>Fieldset's right border doesn't show on auto aligned forms.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>MS Internet Explorer 8</h3>
+									<ul>
+										<li>Custom Fieldset's border displays through title.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>Mozilla Firefox 2.0</h3>
-							<ul>
-								<li>Fieldset's right border doesn't show on auto aligned forms.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Apple Safari 3 and higher</h3>
+								</div>
 
-						<div class="well">
-							<h3>Mozilla Firefox &gt;= 3.0</h3>
-						</div>
+								<div class="well">
+									<h3>Google Chrome 3.0 and higher</h3>
+									<div class="alert alert-info" style="margin: .5em 0 0; font-size: .8em; padding: .3em;">Note that in Chrome 15, when you focus on some fields, their div grows in height. This is caused by Bootstrap's styling, not Pines Form.</div>
+								</div>
 
-						<div class="well">
-							<h3>Google Chrome &gt;= 2.0</h3>
-						</div>
+								<div class="well">
+									<h3>Opera 10</h3>
+								</div>
 
-						<div class="well">
-							<h3>MS Internet Explorer 5.01</h3>
-							<ul>
-								<li>Full width textarea extends too far.</li>
-								<li>jQuery UI styled form is not visible and not accessible.</li>
-								<li>Centering using the &lt;center&gt; workaround will center all the form's content.</li>
-								<li>Won't automatically clear content after forms without a fieldset.</li>
-								<li>Custom fieldset's border is not dotted.</li>
-								<li>Centered buttons don't work.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Opera 11</h3>
+									<ul>
+										<li>The inputs in the 3 column form are a little wonky. (They're too wide to fit nicely, but that's an easy fix.)</li>
+									</ul>
+								</div>
+							</div>
+							<div class="span6">
+								<h3 style="text-align: center;">Legacy Browsers</h3>
 
-						<div class="well">
-							<h3>MS Internet Explorer 5.5</h3>
-							<ul>
-								<li>Centering using the &lt;center&gt; workaround will center all the form's content.</li>
-								<li>Won't automatically clear content after forms without a fieldset.</li>
-								<li>Custom fieldset's border displays through title.</li>
-								<li>Centered buttons don't work.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Mozilla Firefox 1.0 <small>(Not tested since version 1.1)</small></h3>
+									<ul>
+										<li>Fieldset's right border doesn't show on auto aligned forms.</li>
+										<li>Crashes due to JavaScript on this page. (i.e. Not a Pines Form problem.)</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>MS Internet Explorer 6</h3>
-							<ul>
-								<li>Full width textarea is pushed below its label.</li>
-								<li>Full width textarea is too far to the right.</li>
-								<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
-								<li>Custom fieldset's border displays through title.</li>
-								<li>Centered buttons don't work.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Mozilla Firefox 1.5 <small>(Not tested since version 1.1)</small></h3>
+									<ul>
+										<li>Fieldset's right border doesn't show on auto aligned forms.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>MS Internet Explorer 7</h3>
-							<ul>
-								<li>Full width textarea is pushed below its label.</li>
-								<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
-								<li>Custom Fieldset's border displays through title.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>Mozilla Firefox 2.0 <small>(Not tested since version 1.1)</small></h3>
+									<ul>
+										<li>Fieldset's right border doesn't show on auto aligned forms.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>MS Internet Explorer 8</h3>
-							<ul>
-								<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
-								<li>Custom Fieldset's border displays through title.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>MS Internet Explorer 5.01 <small>(Not tested since version 1.1)</small></h3>
+									<ul>
+										<li>Full width textarea extends too far.</li>
+										<li>jQuery UI styled form is not visible and not accessible.</li>
+										<li>Centering using the &lt;center&gt; workaround will center all the form's content.</li>
+										<li>Won't automatically clear content after forms without a fieldset.</li>
+										<li>Custom fieldset's border is not dotted.</li>
+										<li>Centered buttons don't work.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-						<h3>Opera 8</h3>
-						</div>
+								<div class="well">
+									<h3>MS Internet Explorer 5.5 <small>(Not tested since version 1.1)</small></h3>
+									<ul>
+										<li>Centering using the &lt;center&gt; workaround will center all the form's content.</li>
+										<li>Won't automatically clear content after forms without a fieldset.</li>
+										<li>Custom fieldset's border displays through title.</li>
+										<li>Centered buttons don't work.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>Opera 9</h3>
-							<ul>
-								<li>jQuery UI styled checkbox doesn't show a check.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>MS Internet Explorer 6</h3>
+									<ul>
+										<li>Full width fields are pushed below their labels.</li>
+										<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
+										<li>Custom fieldset's border displays through title.</li>
+										<li>Centered buttons don't work.</li>
+									</ul>
+									<div class="alert alert-info" style="margin: .5em 0 0; font-size: .8em; padding: .3em;">Note that right-aligning labels doesn't work unless you apply <code>pf-labels-right</code> to its own element.</div>
+								</div>
 
-						<div class="well">
-							<h3>Opera 10</h3>
-							<ul>
-								<li>A horizontal scrollbar appears with full width elements.</li>
-							</ul>
-						</div>
+								<div class="well">
+									<h3>MS Internet Explorer 7</h3>
+									<ul>
+										<li>Full width textarea is pushed below its label.</li>
+										<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
+										<li>Custom Fieldset's legend's bottom border extends too far.</li>
+									</ul>
+								</div>
 
-						<div class="well">
-							<h3>Apple Safari &gt;= 3<h3>
+								<div class="well">
+									<h3>Opera 8</h3>
+									<ul>
+										<li>Permanently shows mobile styling.</li>
+									</ul>
+								</div>
+
+								<div class="well">
+									<h3>Opera 9</h3>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
