@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-	<title>Pines Form</title>
 	<meta charset="utf-8" />
+	<title>Pines Form</title>
 	<meta name="HandheldFriendly" content="true" />
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="CSS form layout library for HTML and XHTML." />
+	<meta property="og:title" content="Pines Form" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://pinesframework.org/pform/" />
+	<meta property="og:image" content="http://pinesframework.org/pform/includes/pines-logo.png" />
+	<meta property="og:site_name" content="Pines Form" />
+	<meta property="fb:admins" content="508999194" />
+	<meta property="og:description" content="CSS form layout library for HTML and XHTML." />
 	<!-- BEGIN PINES FORM CSS -->
 	<link href="pform.css" media="all" rel="stylesheet" type="text/css" />
 	<!-- Include this file if you are using Bootstrap. -->
@@ -144,7 +152,7 @@
 			margin: 0 auto;
 		}
 		.page-banner {
-			padding: 130px 0;
+			padding: 130px 0 170px;
 			text-align: center;
 		}
 		.page-banner h1 {
@@ -159,8 +167,31 @@
 			margin-top: 20px;
 			font-size: 26px;
 		}
-		.page-banner .using-link {
+		.page-banner .right-button {
 			margin-left: 20px;
+		}
+		.quick-links {
+			list-style: none outside none;
+			margin: 0;
+			min-height: 30px;
+			padding: 5px 20px;
+			text-align: center;
+		}
+		.quick-links:first-child {
+			min-height: 0;
+		}
+		.quick-links li {
+			position: relative;
+			top: 5px;
+			color: #999999;
+			display: inline;
+			margin: 0 5px;
+		}
+		.quick-links .fb-btn {
+			top: 1px;
+		}
+		.quick-links .fb_iframe_widget iframe {
+			left: 0;
 		}
 		.page-points .row-fluid {
 			margin-bottom: 30px;
@@ -201,7 +232,7 @@
 			.page-banner .btn-large {
 				font-size: 16px;
 			}
-			.page-banner .using-link {
+			.page-banner .right-button {
 				margin-left: 0;
 			}
 			.page-points .row-fluid {
@@ -250,7 +281,7 @@
 				margin-top: 30px;
 				font-size: 14px;
 			}
-			.page-banner .using-link {
+			.page-banner .right-button {
 				margin-left: 0;
 			}
 			.page-points {
@@ -278,7 +309,15 @@
 	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
 </head>
 <body id="page" data-spy="scroll">
+	<div id="fb-root"></div>
 	<script type="text/javascript">
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=231372466970244";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
 		$(function(){
 			// Toggle borders in the float example.
 			var toggle_boxes = function(){
@@ -304,7 +343,7 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand" href="http://pinesframework.org/pform/" style="height: 40px; padding-top: 0; padding-bottom: 0;">
-					<img alt="Pines Logo" src="includes/pines-logo.png" style="padding: 0; border: 0; vertical-align: middle;" />
+					<img id="logo" alt="Pines Logo" src="includes/pines-logo.png" style="padding: 0; border: 0; vertical-align: middle;" />
 					<span style="line-height: 40px;">Pines Form</span>
 				</a>
 				<div class="nav-collapse">
@@ -354,10 +393,25 @@
 	<div id="wrapper">
 		<div class="page-banner">
 			<h1>Pines Form</h1>
-			<p>CSS form layout library for HTML and XHTML.</p>
+			<p id="description">CSS form layout library for HTML and XHTML.</p>
 			<div>
 				<a class="btn btn-primary btn-large" href="https://sourceforge.net/projects/pines/files/pform/2/pform-2.0.zip/download" target="_blank">Download Pines Form 2.0</a>
-				<a class="using-link btn btn-large" data-toggle="modal" href="#using">Using Pines Form</a>
+				<a class="right-button btn btn-large" href="http://github.com/sciactive/pform" target="_blank" title="Fork me on GitHub">Pines Form on GitHub <img src="includes/github-icon.png" alt="GitHub Icon" /></a>
+				<br /><br />
+				<a data-toggle="modal" href="#using">Using Pines Form</a>
+				<br />
+				<ul class="quick-links">
+					<li class="fb-btn">
+						<div class="fb-like" data-href="http://pinesframework.org/pform/" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+					</li>
+					<li class="follow-btn">
+						<a href="https://twitter.com/pinesframework" class="twitter-follow-button" data-show-count="false">Follow @pinesframework</a>
+					</li>
+					<li class="tweet-btn">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pinesframework.org/pform/">Tweet</a>
+					</li>
+				</ul>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
 		</div>
 		<div class="modal hide" id="using" style="max-height: inherit;">
@@ -460,10 +514,10 @@
 							<h3><i class="icon-gift" style="position: relative; top: 3px;"></i> Completely Open</h3>
 							<p>
 								Pines Form is distributed under the
-								<a href="http://www.gnu.org/licenses/gpl.html" onclick="window.open(this.href); return false;">GPL</a>,
-								<a href="http://www.gnu.org/licenses/lgpl.html" onclick="window.open(this.href); return false;">LGPL</a>,
+								<a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GPL</a>,
+								<a href="http://www.gnu.org/licenses/lgpl.html" target="_blank">LGPL</a>,
 								and
-								<a href="http://www.mozilla.org/MPL/MPL-1.1.html" onclick="window.open(this.href); return false;">MPL</a>.
+								<a href="http://www.mozilla.org/MPL/MPL-1.1.html" target="_blank">MPL</a>.
 								This triple copyleft licensing model avoids
 								incompatibility with other open source licenses.
 							</p>
@@ -471,9 +525,7 @@
 					</div>
 				</div>
 				<div class="row-fluid">
-					<div class="span3">
-						&nbsp;
-					</div>
+					<div class="span3">&nbsp;</div>
 					<div class="span6">
 						<div class="alert alert-success">
 							<h3><i class="icon-ok" style="position: relative; top: 3px;"></i> Most Importantly, Standards Compliant</h3>
