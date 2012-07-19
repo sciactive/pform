@@ -11,7 +11,8 @@ link: http://pinesframework.org/pform/
 .pf-form {
 	display: inline;
 }
-.pf-form:after, .pf-form fieldset:after {
+.pf-form:after,
+.pf-form fieldset:after {
 	content: ".";
 	display: block;
 	height: 0;
@@ -36,7 +37,8 @@ link: http://pinesframework.org/pform/
 	clear: left;
 	padding-bottom: 15px;
 }
-.pf-form .pf-heading, .pf-form .pf-element.pf-full-width {
+.pf-form .pf-heading,
+.pf-form .pf-element.pf-full-width {
 	width: 100%;
 }
 .pf-form .pf-heading {
@@ -44,14 +46,34 @@ link: http://pinesframework.org/pform/
 	padding-bottom: 0;
 	margin-bottom: 10px;
 }
-.pf-form .pf-element .pf-label, .pf-form .pf-element .pf-note {
+.pf-form .pf-element .pf-label,
+.pf-form .pf-element .pf-note {
 	width: 230px; /* Width of labels. */
 	float: left;
 }
-.pf-form.pf-labels-right .pf-label, .pf-form .pf-labels-right .pf-label, .pf-form .pf-labels-right.pf-label, .pf-form.pf-labels-right .pf-note, .pf-form .pf-labels-right .pf-note, .pf-form .pf-labels-right.pf-note {
+.pf-form.pf-layout-block .pf-element .pf-label,
+.pf-form.pf-layout-block .pf-element .pf-note,
+.pf-form .pf-layout-block .pf-label,
+.pf-form .pf-layout-block .pf-note {
+	width: auto;
+	float: none;
+	display: block;
+	margin-bottom: 5px;
+}
+.pf-form.pf-labels-right .pf-label,
+.pf-form .pf-labels-right .pf-label,
+.pf-form .pf-labels-right.pf-label,
+.pf-form.pf-labels-right .pf-note,
+.pf-form .pf-labels-right .pf-note,
+.pf-form .pf-labels-right.pf-note {
 	text-align: right;
 }
-.pf-form.pf-labels-left .pf-label, .pf-form .pf-labels-left .pf-label, .pf-form .pf-labels-left.pf-label, .pf-form.pf-labels-left .pf-note, .pf-form .pf-labels-left .pf-note, .pf-form .pf-labels-left.pf-note {
+.pf-form.pf-labels-left .pf-label,
+.pf-form .pf-labels-left .pf-label,
+.pf-form .pf-labels-left.pf-label,
+.pf-form.pf-labels-left .pf-note,
+.pf-form .pf-labels-left .pf-note,
+.pf-form .pf-labels-left.pf-note {
 	text-align: left;
 }
 .pf-form .pf-element .pf-note {
@@ -60,25 +82,59 @@ link: http://pinesframework.org/pform/
 	font-size: 70%;
 	opacity: .8;
 }
+.pf-form .pf-element .pf-group .pf-note,
+.pf-form.pf-layout-block .pf-element .pf-group .pf-note,
+.pf-form .pf-layout-block .pf-element .pf-group .pf-note {
+	display: inline;
+	width: auto;
+	margin-top: 0;
+	text-align: left;
+	clear: none;
+}
 .pf-form .pf-element .pf-required {
 	color: #f00;
+}
+.pf-form .pf-element.pf-completed .pf-required,
+.pf-form .pf-element .pf-completed .pf-required,
+.pf-form .pf-element .pf-required.pf-completed {
+	color: #0c0;
 }
 .pf-form .pf-element .pf-group {
 	margin-left: 230px; /* Same as width of labels. */
 	display: block;
 }
-.pf-form .pf-element .pf-field, .pf-form .pf-buttons .pf-button {
+.pf-form.pf-layout-block .pf-element .pf-group,
+.pf-form .pf-layout-block .pf-group {
+	margin-left: 0;
+}
+.pf-form .pf-element .pf-field,
+.pf-form .pf-buttons .pf-button {
 	float: none;
 	margin-left: 5px; /* Margin between inputs and labels. */
+}
+.pf-form.pf-layout-block .pf-element .pf-field,
+.pf-form .pf-layout-block .pf-field {
+	float: none;
+	margin-left: 0;
 }
 .pf-form .pf-element .pf-field.pf-full-width {
 	display: block;
 	margin-left: 235px; /* Width of labels + margin between inputs and labels. */
 }
+.pf-form.pf-layout-block .pf-element .pf-field.pf-full-width,
+.pf-form .pf-layout-block .pf-field.pf-full-width {
+	display: block;
+	margin-left: 0;
+}
 .pf-form .pf-buttons {
 	clear: both;
 	padding-bottom: 0;
 	padding-left: 215px; /* Width of labels + margin to inputs - button spacing. */
+}
+.pf-form.pf-layout-block .pf-buttons,
+.pf-form .pf-layout-block .pf-buttons {
+	padding-left: 0;
+	margin-left: -20px; /* -1 * button spacing. */
 }
 .pf-form .pf-buttons.pf-centered {
 	width: 100%;
@@ -89,19 +145,35 @@ link: http://pinesframework.org/pform/
 	margin-left: 20px; /* Button spacing. */
 	margin-bottom: 10px;
 }
-
-@media (max-width: 720px) {
+@media print {
+	.pf-form {
+		display: block;
+	}
+}
+@media (max-width: 480px) {
+	.pf-form {
+		display: block;
+	}
+	.pf-form .pf-element {
+		float: none;
+		clear: left;
+		margin-bottom: 10px;
+	}
 	.pf-form .pf-element.pf-full-width .pf-full-width {
 		padding-right: .2em; /* Keep padded inputs from pushing out of their box. */
 	}
 	.pf-form .pf-element .pf-label, .pf-form .pf-element .pf-note {
+		text-align: left;
 		float: none;
 		width: auto;
 		display: block;
 		margin-bottom: .1em;
 	}
+	.pf-form .pf-element .pf-field, .pf-form .pf-buttons .pf-button {
+		margin-top: 5px;
+	}
 	.pf-form .pf-element .pf-group {
-		margin-left: 0;
+		margin-left: 0 !important;
 		display: block;
 	}
 	.pf-form .pf-element .pf-field.pf-full-width {
@@ -110,4 +182,8 @@ link: http://pinesframework.org/pform/
 	.pf-form .pf-buttons {
 		padding-left: 0;
 	}
+}
+@media (max-width: 767px) {
+}
+@media (min-width: 1200px) {
 }
