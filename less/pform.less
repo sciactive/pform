@@ -226,6 +226,7 @@ link: http://pinesframework.org/pform/
 		}
 	}
 }
+// Tablet styling.
 @media (min-width: 481px) and (max-width: 767px) {
 	.pf-form {
 		.pf-element {
@@ -258,7 +259,11 @@ link: http://pinesframework.org/pform/
 		}
 	}
 }
-@media (min-width: 1840px) {
+
+// Normal styling logically falls here...
+
+// Widescreen styling.
+@media (min-width: 1281px) and (max-width: 1839px) {
 	.pf-form {
 		.pf-element {
 			.pf-label, .pf-note {
@@ -287,6 +292,39 @@ link: http://pinesframework.org/pform/
 
 		&.pf-layout-block .pf-buttons, .pf-layout-block .pf-buttons, .pf-buttons.pf-layout-block {
 			margin-left: @button-pad-widescreen * -1;
+		}
+	}
+}
+// Huge styling.
+@media (min-width: 1840px) {
+	.pf-form {
+		.pf-element {
+			.pf-label, .pf-note {
+				width: @label-width-huge;
+			}
+
+			.pf-field {
+				margin-left: @field-margin-huge;
+				&.pf-full-width {
+					margin-left: @label-width-huge + @field-margin-huge;
+				}
+			}
+
+			.pf-group {
+				margin-left: @label-width-huge;
+			}
+		}
+
+		.pf-buttons {
+			padding-left: @label-width-huge + @field-margin-huge - @button-pad-huge;
+
+			.pf-button {
+				margin-left: @button-pad-huge;
+			}
+		}
+
+		&.pf-layout-block .pf-buttons, .pf-layout-block .pf-buttons, .pf-buttons.pf-layout-block {
+			margin-left: @button-pad-huge * -1;
 		}
 	}
 }

@@ -51,7 +51,7 @@ link: http://pinesframework.org/pform/
 .pf-form .pf-element .pf-label,
 .pf-form .pf-element .pf-note {
   float: left;
-  width: 230px;
+  width: 180px;
 }
 
 .pf-form .pf-element .pf-note {
@@ -77,12 +77,12 @@ link: http://pinesframework.org/pform/
 
 .pf-form .pf-element .pf-field.pf-full-width {
   display: block;
-  margin-left: 235px;
+  margin-left: 185px;
 }
 
 .pf-form .pf-element .pf-group {
   display: block;
-  margin-left: 230px;
+  margin-left: 180px;
 }
 
 .pf-form .pf-element .pf-group .pf-note {
@@ -119,7 +119,7 @@ link: http://pinesframework.org/pform/
 
 .pf-form .pf-buttons {
   padding-bottom: 0;
-  padding-left: 215px;
+  padding-left: 165px;
   clear: both;
 }
 
@@ -259,6 +259,33 @@ link: http://pinesframework.org/pform/
   .pf-form .pf-layout-block .pf-buttons,
   .pf-form .pf-buttons.pf-layout-block {
     margin-left: -15px;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1839px) {
+  .pf-form .pf-element .pf-label,
+  .pf-form .pf-element .pf-note {
+    width: 230px;
+  }
+  .pf-form .pf-element .pf-field {
+    margin-left: 5px;
+  }
+  .pf-form .pf-element .pf-field.pf-full-width {
+    margin-left: 235px;
+  }
+  .pf-form .pf-element .pf-group {
+    margin-left: 230px;
+  }
+  .pf-form .pf-buttons {
+    padding-left: 215px;
+  }
+  .pf-form .pf-buttons .pf-button {
+    margin-left: 20px;
+  }
+  .pf-form.pf-layout-block .pf-buttons,
+  .pf-form .pf-layout-block .pf-buttons,
+  .pf-form .pf-buttons.pf-layout-block {
+    margin-left: -20px;
   }
 }
 
