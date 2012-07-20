@@ -218,6 +218,7 @@
 						</li>
 						<li><a href="#floats">Floats in Fields</a></li>
 						<li><a href="#browsers">Browser Support</a></li>
+						<li><a href="#comments">Comments</a></li>
 					</ul>
 					<ul class="nav pull-right">
 						<li class="dropdown">
@@ -300,7 +301,7 @@
 			</div>
 			<div class="modal-body">
 				<p>
-					Pines Form comes with 4 files:<br />
+					Pines Form comes with the following files:<br />
 					<br />
 					<code>pform.css</code> &amp; <code>pform.min.css</code> (Minified) - The main stylesheet.
 					<br />
@@ -456,7 +457,7 @@
 						</div>
 						<p style="font-size: 1.2em; line-height: 1.2em;">
 							Pines Form is not a graphically styling library. There are
-							very few colors and no pictures included in Pines Form. If
+							very few colors and no images included in Pines Form. If
 							you like the styling of the elements on this page, you
 							should check out
 							<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>
@@ -592,19 +593,19 @@
 							<span class="pf-label">What's your favorite food?</span>
 							<span class="pf-note">Your answer will determine your eligibility for spaaaaaaaaaace.</span>
 							<div class="pf-group">
-								<label><input class="pf-field" type="radio" name="radiotest" />Hot Dogs</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Hamburgers</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Cheeseburgers</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Sushi</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Pizza</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Steak</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Ham</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Turkey</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Mashed Potatoes</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Eggs</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Bacon</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Cake</label><br />
-								<label><input class="pf-field" type="radio" name="radiotest" />Ice Cream</label>
+								<label><input class="pf-field" type="radio" name="radiotest" /> Hot Dogs</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Hamburgers</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Cheeseburgers</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Sushi</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Pizza</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Steak</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Ham</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Turkey</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Mashed Potatoes</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Eggs</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Bacon</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Cake</label><br />
+								<label><input class="pf-field" type="radio" name="radiotest" /> Ice Cream</label>
 							</div>
 						</div>
 						<div class="pf-element">
@@ -1072,21 +1073,18 @@
 
 								<div class="well">
 									<h3>Apple Safari 3 and higher</h3>
+									<div class="alert alert-info" style="margin: .5em 0 0; font-size: .8em; padding: .3em;">Not a problem with Pines Form, but when you switch to block layout then back to inline layout, some elements don't reposition correctly. If this is a problem for you, solve it by putting fields in a <code>pf-group</code> or <code>pf-full-width</code>.</div>
 								</div>
 
 								<div class="well">
 									<h3>Google Chrome 3.0 and higher</h3>
-									<div class="alert alert-info" style="margin: .5em 0 0; font-size: .8em; padding: .3em;">Note that in Chrome 15, when you focus on some fields, their div grows in height. This is caused by Bootstrap's styling, not Pines Form.</div>
+									<div class="alert alert-info" style="margin: .5em 0 0; font-size: .8em; padding: .3em;">Note that in Chrome 15, when you focus on some fields, their div grows in height. This is caused by Bootstrap's styling, not Pines Form. Also, the Safari block layout switch bug from above.</div>
 								</div>
 
 								<div class="well">
-									<h3>Opera 10</h3>
-								</div>
-
-								<div class="well">
-									<h3>Opera 11</h3>
+									<h3>Opera 10 and higher</h3>
 									<ul>
-										<li>The inputs in the 3 column form are a little wonky. (They're too wide to fit nicely, but that's an easy fix.)</li>
+										<li>In Opera 11 the inputs in the 3 column form are a little wonky. (They're too wide to fit nicely, but that's an easy fix.)</li>
 									</ul>
 								</div>
 							</div>
@@ -1153,7 +1151,7 @@
 									<ul>
 										<li>Full width textarea is pushed below its label.</li>
 										<li>When custom fieldset's title is colored, all fieldsets' titles get colored.</li>
-										<li>Custom Fieldset's legend's bottom border extends too far.</li>
+										<li>Fieldsets' legends' bottom border extends too far.</li>
 									</ul>
 								</div>
 
@@ -1170,6 +1168,26 @@
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div id="comments">
+					<div class="page-header">
+						<h2>Comments</h2>
+					</div>
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+						var disqus_shortname = 'pform'; // required: replace example with your forum shortname
+
+						/* * * DON'T EDIT BELOW THIS LINE * * */
+						(function() {
+							var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+							dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+							(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+						})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 				</div>
 			</div>
 		</div>

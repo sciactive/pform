@@ -65,7 +65,8 @@ link: http://pinesframework.org/pform/
   color: #ff0000;
 }
 
-.pf-form .pf-element .pf-completed {
+.pf-form .pf-element .pf-completed,
+.pf-form .pf-element.pf-completed .pf-required {
   color: #00cc00;
 }
 
