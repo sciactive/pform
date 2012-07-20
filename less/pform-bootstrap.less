@@ -1,0 +1,34 @@
+/* Resets Twitter Bootstrap's form styles so Pines Form can work with Bootstrap. */
+
+.pf-form {
+	label {
+		display: inline;
+		margin-bottom: 0;
+
+		input, textarea, select {
+			display: inline;
+		}
+	}
+
+	input, textarea, select, .uneditable-input {
+		display: inline;
+		margin-bottom: 0;
+		width: auto;
+	}
+
+	legend {
+		line-height: normal;
+		margin-bottom: 0;
+		width: auto;
+	}
+
+	.pf-element .pf-group {
+		padding-right: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.pf-form .pf-element .pf-group {
+		padding-right: 15px;
+	}
+}

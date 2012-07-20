@@ -1,12 +1,6 @@
-/*
-Pines Form 2.0
+/* Required for IE 5.5 and lower. */
 
-license: http://www.gnu.org/licenses/gpl.html
-license: http://www.gnu.org/licenses/lgpl.html
-license: http://www.mozilla.org/MPL/MPL-1.1.html
-Required for IE 5.5 and lower.
-*/
 .pf-form {
-	height: auto; /* Undoes our IE6 fix from above. */
-	clear: left; /* Fixes forms aligning right of floated elements. */
+  height: auto;
+  clear: left;
 }
