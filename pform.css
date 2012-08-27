@@ -1,5 +1,5 @@
 /*
-Pines Form 3.0
+Pines Form 3.1
 
 license: http://www.gnu.org/licenses/gpl.html
 license: http://www.gnu.org/licenses/lgpl.html
@@ -8,10 +8,6 @@ author: Hunter Perrin <hunter@sciactive.com>
 copyright: SciActive.com
 link: http://pinesframework.org/pform/
 */
-
-.pf-form {
-  display: inline;
-}
 
 .pf-form:after,
 .pf-form fieldset:after {

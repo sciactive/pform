@@ -1,5 +1,5 @@
 /*
-Pines Form 3.0
+Pines Form 3.1
 
 license: http://www.gnu.org/licenses/gpl.html
 license: http://www.gnu.org/licenses/lgpl.html
@@ -8,9 +8,7 @@ author: Hunter Perrin <hunter@sciactive.com>
 copyright: SciActive.com
 link: http://pinesframework.org/pform/
 */
-
 @import "variables.less";
-
 .inline-note () {
 	display: inline;
 	width: auto;
@@ -18,9 +16,11 @@ link: http://pinesframework.org/pform/
 	text-align: left;
 	clear: none;
 }
-
 .pf-form {
-	display: inline;
+	// This line causes a bug in Firefox where some select box dropdowns will
+	// close as soon as you move the mouse over them. I can't remember why it
+	// was here in the first place...
+	//display: inline;
 
 	&:after,
 	fieldset:after {
