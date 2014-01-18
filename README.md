@@ -1,14 +1,14 @@
 Introduction
 ============
 
-Pines Form is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin as part of Pines. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
+PForm is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin as part of Pines. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
 
-See http://pinesframework.org/pform/ for more information and examples.
+See http://sciactive.com/pform/ for more information and examples.
 
 Getting Started
 ===============
 
-Pines Form comes with the following files:
+PForm comes with the following files:
 
 * `pform.css` & `pform.min.css` (Minified) - The main stylesheet.
 * `pform-ie-lt-8.css` & `pform-ie-lt-8.min.css` (Minified) - Use this to support Internet Explorer 6 and 7.
@@ -29,7 +29,7 @@ So here's how you'd include them all:
 
 Notice the conditional comments to serve IE the right files. 
 
-Now you can use Pines Form like this:
+Now you can use PForm like this:
 
 	<form class="pf-form" action="#" method="post">
 		<div class="pf-element pf-heading">
@@ -85,7 +85,7 @@ Features
 Layouts
 -------
 
-Pines Form has two different layout options, Inline (default) and Block. To use block layout for an entire form, add the `pf-layout-block` class to the `pf-form` element. To use block layout for an individual element, add the `pf-layout-block` class to a `pf-element` element.
+PForm has two different layout options, Inline (default) and Block. To use block layout for an entire form, add the `pf-layout-block` class to the `pf-form` element. To use block layout for an individual element, add the `pf-layout-block` class to a `pf-element` element.
 
 Headings
 --------
@@ -197,4 +197,4 @@ You can apply a form like layout to verification pages by simply providing no in
 Additional Info
 ===============
 
-For examples/demos see http://pinesframework.org/pform/
+For examples/demos see http://sciactive.com/pform/
