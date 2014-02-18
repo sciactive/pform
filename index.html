@@ -33,8 +33,7 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
 	<!-- Bootstrap (IE6 doesn't like it very much.) -->
 	<!--[if !IE]> -->
-	<link href="includes/bootstrap3/css/bootstrap.css" rel="stylesheet" type="text/css" />
-	<link href="includes/bootstrap3/css/bootstrap-theme.css" id="bootstrap-css" rel="stylesheet" type="text/css" />
+	<link href="includes/bootstrap3/css/bootstrap.css" id="bootstrap-css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="includes/bootstrap/js/bootstrap.min.js"></script>
 	<!-- <![endif]-->
 	<!--[if gt IE 6]>
@@ -191,7 +190,7 @@
 			position: fixed;
 			top: 60px;
 			right: 5px;
-			z-index: 10000;
+			z-index: 100;
 		}
 		@media (max-width: 980px) {
 			#switcher-container {
@@ -227,7 +226,7 @@
 	<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
 </head>
 <body id="page" data-spy="scroll">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -287,23 +286,44 @@
 					<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu pull-right">
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Normal'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-theme.css');">Normal</a></li>
+					<li><a href="javascript:void(0);" data-theme="normal">Normal</a></li>
 					<li class="divider"></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Amelia'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-amelia.css');">Amelia</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Cerulean'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-cerulean.css');">Cerulean</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Cosmo'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-cosmo.css');">Cosmo</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Cyborg'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-cyborg.css');">Cyborg</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Flatly'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-flatly.css');">Flatly</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Journal'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-journal.css');">Journal</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Readable'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-readable.css');">Readable</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Simplex'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-simplex.css');">Simplex</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Slate'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-slate.css');">Slate</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Spacelab'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-spacelab.css');">Spacelab</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('United'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-united.css');">United</a></li>
-					<li><a href="javascript:void(0);" onclick="$('#bootstrap-current').text('Yeti'); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap-yeti.css');">Yeti</a></li>
+					<li><a href="javascript:void(0);" data-theme="amelia">Amelia</a></li>
+					<li><a href="javascript:void(0);" data-theme="cerulean">Cerulean</a></li>
+					<li><a href="javascript:void(0);" data-theme="cosmo">Cosmo</a></li>
+					<li><a href="javascript:void(0);" data-theme="cupid">Cupid</a></li>
+					<li><a href="javascript:void(0);" data-theme="cyborg">Cyborg</a></li>
+					<li><a href="javascript:void(0);" data-theme="flatly">Flatly</a></li>
+					<li><a href="javascript:void(0);" data-theme="journal">Journal</a></li>
+					<li><a href="javascript:void(0);" data-theme="lumen">Lumen</a></li>
+					<li><a href="javascript:void(0);" data-theme="pinkiepie">Pinkie Pie</a></li>
+					<li><a href="javascript:void(0);" data-theme="readable">Readable</a></li>
+					<li><a href="javascript:void(0);" data-theme="simplex">Simplex</a></li>
+					<li><a href="javascript:void(0);" data-theme="slate">Slate</a></li>
+					<li><a href="javascript:void(0);" data-theme="spacelab">Spacelab</a></li>
+					<li><a href="javascript:void(0);" data-theme="superhero">Superhero</a></li>
+					<li><a href="javascript:void(0);" data-theme="united">United</a></li>
+					<li><a href="javascript:void(0);" data-theme="yeti">Yeti</a></li>
 					<li class="divider"></li>
-					<li><a href="http://bootswatch.com/" target="_blank">Themes by Bootswatch</a></li>
+					<li><a href="http://bootswatch.com/" target="_blank">Certain Themes by Bootswatch</a></li>
 				</ul>
+				<script type="text/javascript">
+					$(function(){
+						var reset = function(){
+							setTimeout(function(){
+								var y = $(".navbar").height() + 10;
+								$("#switcher-container").css('top', y+'px');
+							}, 500);
+						};
+						reset();
+						$('#switcher-bootstrap').on('click', 'a[data-theme]', function(){
+							var $this = $(this),
+								theme = $this.attr('data-theme');
+							$('#bootstrap-current').text($this.text()); $('#bootstrap-css').attr('href', 'includes/bootstrap3/css/bootstrap'+(theme==='normal'?'':'-'+theme)+'.css');
+							reset();
+						});
+					});
+				</script>
 			</div>
 		</div>
 		<div id="switcher-jqueryui" class="hide"></div>
@@ -529,11 +549,11 @@
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Username</span>
-							<input class="pf-field" type="text" name="username" /></label>
+							<input class="pf-field form-control" type="text" name="username" /></label>
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Password</span>
-							<input class="pf-field" type="password" name="password" /></label>
+							<input class="pf-field form-control" type="password" name="password" /></label>
 						</div>
 						<div class="pf-element">
 							<label><span class="pf-label">Remember Me</span>
@@ -585,48 +605,48 @@
 							<h3>Extensive Example Form</h3>
 							<p>This form is an example, and this is a description of it.</p>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<label>
 								<span class="pf-label">This is a test. <span class="pf-required">*</span></span>
 								<span class="pf-note">This is a note about something.</span>
-								<input class="pf-field" type="text" name="test" />
+								<input class="pf-field form-control" type="text" name="test" />
 							</label>
 						</div>
 						<div class="pf-element pf-full-width">
 							<label>
 								<span class="pf-label">This is also a test. <span class="pf-required">*</span></span>
 								<span class="pf-group">
-									<input class="pf-field" type="text" name="test2" style="width: 100%;" />
+									<input class="pf-field form-control" type="text" name="test2" style="width: 100%;" />
 								</span>
 							</label>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<label>
 								<span class="pf-label">Try clicking these labels. <span class="pf-required">*</span></span>
 								<span class="pf-note">They'll put focus on the input.</span>
-								<span class="pf-field">Fill in the <input type="text" name="test" size="5" />.</span>
+								<span class="pf-field">Fill in the <input class="form-control" type="text" name="test" size="5" />.</span>
 							</label>
 						</div>
 						<!-- You can put pf-completed on the pf-element div too. -->
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<label>
 								<span class="pf-label">This is completed. <span class="pf-required pf-completed">*</span></span>
 								<span class="pf-group">
 									<span class="pf-field" style="display: block;">
-										<input type="text" name="test" /><br />
+										<input class="form-control" type="text" name="test" /><br />
 										<span class="pf-note">This note is over here.</span>
 									</span>
 								</span>
 							</label>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<label>
 								<span class="pf-label">Is this a test?</span>
 								<span class="pf-note">It might just be a trick.</span>
 								<input class="pf-field" type="checkbox" name="checktest" />
 							</label>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<span class="pf-label">Is this really a test?</span>
 							<div class="pf-group">
 								<label><input class="pf-field" type="radio" name="radiotest" /> Yes</label>
@@ -636,7 +656,7 @@
 						<div class="pf-element pf-heading">
 							<h4>Foods</h4>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<span class="pf-label">What's your favorite food?</span>
 							<span class="pf-note">Your answer will determine your eligibility for spaaaaaaaaaace.</span>
 							<div class="pf-group">
@@ -655,10 +675,10 @@
 								<label><input class="pf-field" type="radio" name="radiotest" /> Ice Cream</label>
 							</div>
 						</div>
-						<div class="pf-element">
+						<div class="pf-element pf-full-width">
 							<span class="pf-label">What foods do you like?</span>
 							<span class="pf-note">Hold CTRL to select multiples.</span>
-							<select class="pf-field" name="likefoods" multiple="multiple" size="4">
+							<select class="pf-field form-control" name="likefoods" multiple="multiple" size="4">
 								<option>Hot Dogs</option>
 								<option>Hamburgers</option>
 								<option>Cheeseburgers</option>
@@ -685,10 +705,10 @@
 							<div class="pf-element pf-heading">
 								<p>These tests require a complex grasp on reality to correctly comprehend.</p>
 							</div>
-							<div class="pf-element">
+							<div class="pf-element pf-full-width">
 								<span class="pf-label">Complexity is Increased</span>
 								<span class="pf-note">Hold CTRL to select multiples.</span>
-								<select class="pf-field" name="likefoods" multiple="multiple" size="3">
+								<select class="pf-field form-control" name="likefoods" multiple="multiple" size="3">
 									<option>English</option>
 									<option>Spanish</option>
 									<option>French</option>
@@ -696,29 +716,29 @@
 									<option>Lojban</option>
 								</select>
 							</div>
-							<div class="pf-element">
+							<div class="pf-element pf-full-width">
 								<label>
 									<span class="pf-label">Did you notice? <span class="pf-required">*</span></span>
 									<span class="pf-note">The labels in this section are aligned right.</span>
-									<select class="pf-field" name="complex">
+									<select class="pf-field form-control" name="complex">
 										<option>This is an option.</option>
 										<option>This is another option.</option>
 									</select>
 								</label>
 							</div>
-							<div class="pf-element">
+							<div class="pf-element pf-full-width">
 								<label>
 									<span class="pf-label pf-labels-left">Except this label.</span>
-									<select class="pf-field" name="complex">
+									<select class="pf-field form-control" name="complex">
 										<option>This is an option.</option>
 										<option>This is another option.</option>
 									</select>
 								</label>
 							</div>
-							<div class="pf-element">
+							<div class="pf-element pf-full-width">
 								<label>
 									<span class="pf-label">This is a long complex test.</span>
-									<select class="pf-field" name="longcomplex" size="6">
+									<select class="pf-field form-control" name="longcomplex" size="6">
 										<option>1. This is a lot of options.</option>
 										<option>2. This is a lot of options.</option>
 										<option>3. This is a lot of options.</option>
@@ -745,11 +765,11 @@
 						</fieldset>
 						<fieldset class="pf-group">
 							<legend>Simple Tests</legend>
-							<div class="pf-element">
+							<div class="pf-element pf-full-width">
 								<label>
 									<span class="pf-label">This is a test.</span>
 									<span class="pf-note">This is a note about something.</span>
-									<input class="pf-field" type="text" name="test" />
+									<input class="pf-field form-control" type="text" name="test" />
 								</label>
 							</div>
 						</fieldset>
@@ -759,7 +779,7 @@
 								<span class="pf-note">I won't actually be reading this, it's just an example.</span>
 								<span class="pf-note">You can't even submit this form. It won't go anywhere.</span>
 								<span class="pf-group">
-									<span class="pf-field"><textarea style="width: 100%;" name="comment" rows="5" cols="30"></textarea></span>
+									<span class="pf-field"><textarea style="width: 100%;" class="form-control" name="comment" rows="5" cols="30"></textarea></span>
 								</span>
 							</label>
 						</div>
@@ -833,11 +853,11 @@
 							</div>
 							<div class="pf-element">
 								<label><span class="pf-label">Username</span>
-									<input class="pf-field" type="text" name="username" style="width: 130px;" /></label>
+									<input class="pf-field form-control" type="text" name="username" style="width: 130px;" /></label>
 							</div>
 							<div class="pf-element">
 								<label><span class="pf-label">Password</span>
-									<input class="pf-field" type="password" name="password" style="width: 130px;" /></label>
+									<input class="pf-field form-control" type="password" name="password" style="width: 130px;" /></label>
 							</div>
 							<div class="pf-element">
 								<label><span class="pf-label">Remember Me</span>
@@ -897,7 +917,7 @@
 								<span class="pf-label">This is a test. <span class="pf-required">*</span></span>
 								<span class="pf-note">This is a note about something.</span>
 								<span class="pf-group">
-									<input class="pf-field" type="text" name="test" style="max-width: 400px; width: 100%;" />
+									<input class="pf-field form-control" type="text" name="test" style="max-width: 400px; width: 100%;" />
 								</span>
 							</label>
 						</div>
@@ -905,7 +925,7 @@
 							<label>
 								<span class="pf-label">What do you think of my tests?</span>
 								<span class="pf-group">
-									<textarea class="pf-field" name="comment" rows="5" cols="30" style="max-width: 400px; width: 100%;"></textarea>
+									<textarea class="pf-field form-control" name="comment" rows="5" cols="30" style="max-width: 400px; width: 100%;"></textarea>
 								</span>
 							</label>
 						</div>
@@ -939,7 +959,7 @@
 											<label>
 												<span class="pf-label">1. Test Input</span>
 												<span class="pf-note">This is a note.</span>
-												<input class="pf-field" type="text" name="test" />
+												<input class="pf-field form-control" type="text" name="test" />
 											</label>
 										</div>
 									</div>
@@ -947,7 +967,7 @@
 										<div class="pf-element">
 											<label>
 												<span class="pf-label">2. Test Input</span>
-												<input class="pf-field" type="text" name="test2" />
+												<input class="pf-field form-control" type="text" name="test2" />
 											</label>
 										</div>
 									</div>
@@ -955,7 +975,7 @@
 										<div class="pf-element">
 											<label>
 												<span class="pf-label">3. Test Input</span>
-												<span class="pf-field">Fill in the <input type="text" name="test" size="5" />.</span>
+												<span class="pf-field">Fill in the <input class="form-control" type="text" name="test" size="5" />.</span>
 											</label>
 										</div>
 									</div>
@@ -981,7 +1001,7 @@
 									<div class="col-sm-4">
 										<div class="pf-element">
 											<span class="pf-label">6. Test Input</span>
-											<select class="pf-field" name="likefoods" multiple="multiple" size="4">
+											<select class="pf-field form-control" name="likefoods" multiple="multiple" size="4">
 												<option>Hot Dogs</option>
 												<option>Hamburgers</option>
 												<option>Cheeseburgers</option>
@@ -1004,7 +1024,7 @@
 										<div class="pf-element">
 											<label>
 												<span class="pf-label">7. Test Input</span>
-												<select class="pf-field" name="longcomplex" size="6">
+												<select class="pf-field form-control" name="longcomplex" size="6">
 													<option>1. This is a lot of options.</option>
 													<option>2. This is a lot of options.</option>
 													<option>3. This is a lot of options.</option>
@@ -1033,7 +1053,7 @@
 										<div class="pf-element">
 											<label>
 												<span class="pf-label">8. Test Input</span>
-												<textarea class="pf-field" name="comment" rows="5" cols="30"></textarea>
+												<textarea class="pf-field form-control" name="comment" rows="5" cols="30"></textarea>
 											</label>
 										</div>
 									</div>

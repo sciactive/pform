@@ -3,6 +3,7 @@
 .pf-form label {
   display: inline;
   margin-bottom: 0;
+  font-weight: normal;
 }
 
 .pf-form label input,
