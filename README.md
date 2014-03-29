@@ -1,7 +1,7 @@
 Introduction
 ============
 
-PForm is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin as part of Pines. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
+PForm is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin as part of 2be. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
 
 See http://sciactive.com/pform/ for more information and examples.
 
@@ -27,7 +27,7 @@ So here's how you'd include them all:
 	<link href="pform-ie-lt-6.css" media="all" rel="stylesheet" type="text/css" />
 	<![endif]-->
 
-Notice the conditional comments to serve IE the right files. 
+Notice the conditional comments to serve IE the right files.
 
 Now you can use PForm like this:
 
