@@ -1,7 +1,7 @@
 Introduction
 ============
 
-PForm is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin as part of 2be. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
+PForm is a CSS form layout library for HTML and XHTML, developed by Hunter Perrin for SciActive. It is designed to be simple, responsive, cross-browser, semantic, unobtrusive, and standards compliant.
 
 See http://sciactive.com/pform/ for more information and examples.
 
