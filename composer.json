@@ -1,0 +1,30 @@
+{
+    "name": "sciactive/pform",
+    "description": "Pixel perfect CSS form layouts.",
+    "version": "3.2",
+    "type": "library",
+    "keywords": [
+		"form layout",
+		"html",
+		"css"
+	],
+    "homepage": "http://sciactive.com/pform/",
+    "time": "2014-12-21",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Hunter Perrin",
+            "email": "hunter@sciactive.com",
+            "homepage": "https://github.com/hperrin",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/sciactive/pform/issues",
+        "wiki": "https://github.com/sciactive/pform/wiki",
+        "source": "https://github.com/sciactive/pform"
+    },
+    "archive": {
+        "exclude": ["*.html", "bower.json", "includes"]
+    }
+}
