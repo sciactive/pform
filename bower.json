@@ -1,6 +1,6 @@
 {
 	"name": "pform",
-	"version": "3.2",
+	"version": "3.2.1",
 	"main": "css/pform.css",
 	"ignore": [
 		"*.html",

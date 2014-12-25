@@ -1,7 +1,7 @@
 {
     "name": "sciactive/pform",
     "description": "Pixel perfect CSS form layouts.",
-    "version": "3.2",
+    "version": "3.2.1",
     "type": "library",
     "keywords": [
 		"form layout",
