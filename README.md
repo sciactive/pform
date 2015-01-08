@@ -1,5 +1,7 @@
 # <img alt="logo" src="https://raw.githubusercontent.com/sciactive/2be-extras/master/logo/product-icon-40-bw.png" align="top" /> PForm
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/sciactive/pform.svg?style=flat)](https://packagist.org/packages/sciactive/pform) [![License](https://img.shields.io/packagist/l/sciactive/pform.svg?style=flat)](https://packagist.org/packages/sciactive/pform) [![Total Downloads](https://img.shields.io/packagist/dt/sciactive/pform.svg?style=flat)](https://packagist.org/packages/sciactive/pform) [![Open Issues](https://img.shields.io/github/issues/sciactive/pform.svg?style=flat)](https://github.com/sciactive/pform/issues)
+
 PForm is a pixel perfect CSS form layout library.
 
 See http://sciactive.com/pform/ for examples.
