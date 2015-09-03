@@ -1,15 +1,15 @@
 {
-	"name": "pform",
-	"version": "3.2.1",
-	"main": "css/pform.css",
-	"ignore": [
-		"*.html",
-		"composer.json",
-		"includes"
-	],
-	"keywords": [
-		"form layout",
-		"html",
-		"css"
-	]
+    "name": "pform",
+    "version": "3.2.1",
+    "main": "css/pform.css",
+    "ignore": [
+        "*.html",
+        "composer.json",
+        "includes"
+    ],
+    "keywords": [
+        "form layout",
+        "html",
+        "css"
+    ]
 }

@@ -45,26 +45,26 @@ Now you can use PForm like this:
 
 ```html
 <form class="pf-form" action="#" method="post">
-	<div class="pf-element pf-heading">
-		<h3>Login</h3>
-	</div>
-	<div class="pf-element">
-		<label><span class="pf-label">Username</span>
-			<input class="pf-field" type="text" name="username" /></label>
-	</div>
-	<div class="pf-element">
-		<label><span class="pf-label">Password</span>
-			<input class="pf-field" type="password" name="password" /></label>
-	</div>
-	<div class="pf-element">
-		<label><span class="pf-label">Remember Me</span>
-			<span class="pf-note">Lasts for 2 weeks.</span>
-			<input class="pf-field" type="checkbox" name="remember" /></label>
-	</div>
-	<div class="pf-element pf-buttons">
-		<input class="pf-button" type="submit" name="submit" value="Submit" />
-		<input class="pf-button" type="reset" name="reset" value="Reset" />
-	</div>
+    <div class="pf-element pf-heading">
+        <h3>Login</h3>
+    </div>
+    <div class="pf-element">
+        <label><span class="pf-label">Username</span>
+            <input class="pf-field" type="text" name="username" /></label>
+    </div>
+    <div class="pf-element">
+        <label><span class="pf-label">Password</span>
+            <input class="pf-field" type="password" name="password" /></label>
+    </div>
+    <div class="pf-element">
+        <label><span class="pf-label">Remember Me</span>
+            <span class="pf-note">Lasts for 2 weeks.</span>
+            <input class="pf-field" type="checkbox" name="remember" /></label>
+    </div>
+    <div class="pf-element pf-buttons">
+        <input class="pf-button" type="submit" name="submit" value="Submit" />
+        <input class="pf-button" type="reset" name="reset" value="Reset" />
+    </div>
 </form>
 ```
 
@@ -72,26 +72,26 @@ Here's the same form, built with a fieldset:
 
 ```html
 <form class="pf-form" action="#" method="post">
-	<fieldset>
-		<legend>Login</legend>
-		<div class="pf-element">
-			<label><span class="pf-label">Username</span>
-				<input class="pf-field" type="text" name="username" /></label>
-		</div>
-		<div class="pf-element">
-			<label><span class="pf-label">Password</span>
-				<input class="pf-field" type="password" name="password" /></label>
-		</div>
-		<div class="pf-element">
-			<label><span class="pf-label">Remember Me</span>
-				<span class="pf-note">Lasts for 2 weeks.</span>
-				<input class="pf-field" type="checkbox" name="remember" /></label>
-		</div>
-		<div class="pf-element pf-buttons">
-			<input class="pf-button" type="submit" name="submit" value="Submit" />
-			<input class="pf-button" type="reset" name="reset" value="Reset" />
-		</div>
-	</fieldset>
+    <fieldset>
+        <legend>Login</legend>
+        <div class="pf-element">
+            <label><span class="pf-label">Username</span>
+                <input class="pf-field" type="text" name="username" /></label>
+        </div>
+        <div class="pf-element">
+            <label><span class="pf-label">Password</span>
+                <input class="pf-field" type="password" name="password" /></label>
+        </div>
+        <div class="pf-element">
+            <label><span class="pf-label">Remember Me</span>
+                <span class="pf-note">Lasts for 2 weeks.</span>
+                <input class="pf-field" type="checkbox" name="remember" /></label>
+        </div>
+        <div class="pf-element pf-buttons">
+            <input class="pf-button" type="submit" name="submit" value="Submit" />
+            <input class="pf-button" type="reset" name="reset" value="Reset" />
+        </div>
+    </fieldset>
 </form>
 ```
 
@@ -107,8 +107,8 @@ Headings can use any heading element. Actually, they can use any element you wan
 
 ```html
 <div class="pf-element pf-heading">
-	<h3>Sign Up Now</h3>
-	<p>You will receive 200 bonus points just for signing up!</p>
+    <h3>Sign Up Now</h3>
+    <p>You will receive 200 bonus points just for signing up!</p>
 </div>
 ```
 
@@ -140,15 +140,15 @@ Sometimes you will need to group fields so they don't fall left below the label.
 
 ```html
 <div class="pf-element">
-	<span class="pf-label">Favorite Food</span>
-	<div class="pf-group">
-		<label><input class="pf-field" type="radio" name="radiotest" /> Hot Dogs</label><br />
-		<label><input class="pf-field" type="radio" name="radiotest" /> Hamburgers</label><br />
-		<label><input class="pf-field" type="radio" name="radiotest" /> Cheeseburgers</label><br />
-		<label><input class="pf-field" type="radio" name="radiotest" /> Sushi</label><br />
-		<label><input class="pf-field" type="radio" name="radiotest" /> Pizza</label><br />
-		...
-	</div>
+    <span class="pf-label">Favorite Food</span>
+    <div class="pf-group">
+        <label><input class="pf-field" type="radio" name="radiotest" /> Hot Dogs</label><br />
+        <label><input class="pf-field" type="radio" name="radiotest" /> Hamburgers</label><br />
+        <label><input class="pf-field" type="radio" name="radiotest" /> Cheeseburgers</label><br />
+        <label><input class="pf-field" type="radio" name="radiotest" /> Sushi</label><br />
+        <label><input class="pf-field" type="radio" name="radiotest" /> Pizza</label><br />
+        ...
+    </div>
 </div>
 ```
 
@@ -160,12 +160,12 @@ Fieldset groups must use the `pf-group` class:
 
 ```html
 <fieldset class="pf-group">
-	<legend>Household</legend>
-	<div class="pf-element">
-		<label><span class="pf-label">Household Memebers</span>
-			<span class="pf-note">Family members living in your house.</span>
-			<input class="pf-field" type="text" name="household" /></label>
-	</div>
+    <legend>Household</legend>
+    <div class="pf-element">
+        <label><span class="pf-label">Household Memebers</span>
+            <span class="pf-note">Family members living in your house.</span>
+            <input class="pf-field" type="text" name="household" /></label>
+    </div>
 </fieldset>
 ```
 
@@ -179,12 +179,12 @@ Elements can be extended to the form's width using the `pf-full-width` class:
 
 ```html
 <div class="pf-element pf-full-width">
-	<label>
-		<span class="pf-label">Comments</span>
-		<span class="pf-group">
-			<span class="pf-field"><textarea style="width: 100%;" name="comments" rows="5" cols="30"></textarea></span>
-		</span>
-	</label>
+    <label>
+        <span class="pf-label">Comments</span>
+        <span class="pf-group">
+            <span class="pf-field"><textarea style="width: 100%;" name="comments" rows="5" cols="30"></textarea></span>
+        </span>
+    </label>
 </div>
 ```
 
@@ -194,26 +194,26 @@ You can apply a form like layout to verification pages by simply providing no in
 
 ```html
 <form class="pf-form" action="#" method="post">
-	<fieldset>
-		<legend>Verify this Information</legend>
-		<div class="pf-element">
-			<span class="pf-label">Name</span>
-			<span class="pf-field">Jake Sully</span>
-		</div>
-		<div class="pf-element">
-			<span class="pf-label">Location</span>
-			<span class="pf-note">This will not be displayed to visitors.</span>
-			<span class="pf-field">Pandora.</span>
-		</div>
-		<div class="pf-element">
-			<span class="pf-label">Species</span>
-			<span class="pf-field">N/A</span>
-		</div>
-		<div class="pf-element pf-buttons">
-			<button class="pf-button" type="submit" name="submit">Correct</button>
-			<button class="pf-button" type="button" name="changes">Make Changes</button>
-		</div>
-	</fieldset>
+    <fieldset>
+        <legend>Verify this Information</legend>
+        <div class="pf-element">
+            <span class="pf-label">Name</span>
+            <span class="pf-field">Jake Sully</span>
+        </div>
+        <div class="pf-element">
+            <span class="pf-label">Location</span>
+            <span class="pf-note">This will not be displayed to visitors.</span>
+            <span class="pf-field">Pandora.</span>
+        </div>
+        <div class="pf-element">
+            <span class="pf-label">Species</span>
+            <span class="pf-field">N/A</span>
+        </div>
+        <div class="pf-element pf-buttons">
+            <button class="pf-button" type="submit" name="submit">Correct</button>
+            <button class="pf-button" type="button" name="changes">Make Changes</button>
+        </div>
+    </fieldset>
 </form>
 ```
 
