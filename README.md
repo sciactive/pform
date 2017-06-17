@@ -8,9 +8,11 @@ See http://sciactive.com/pform/ for examples.
 
 ## Installation
 
-You can install PForm with Composer or Bower.
+You can install PForm with NPM, Composer or Bower.
 
 ```sh
+npm install pform
+
 composer require sciactive/pform
 
 bower install https://github.com/sciactive/pform.git
@@ -20,10 +22,10 @@ bower install https://github.com/sciactive/pform.git
 
 PForm comes with the following files:
 
-* `pform.css` & `pform.min.css` (Minified) - The main stylesheet.
-* `pform-bootstrap.css` & `pform-bootstrap.min.css` (Minified) - Use this if you also use Bootstrap.
-* `pform-ie-lt-8.css` & `pform-ie-lt-8.min.css` (Minified) - Use this to support Internet Explorer 6 and 7.
-* `pform-ie-lt-6.css` & `pform-ie-lt-6.min.css` (Minified) - Use this to support Internet Explorer 5.01 and 5.5.
+* `pform.css` - The main stylesheet.
+* `pform-bootstrap.css` - Use this if you also use Bootstrap.
+* `pform-ie-lt-8.css` - Use this to support Internet Explorer 6 and 7.
+* `pform-ie-lt-6.css` - Use this to support Internet Explorer 5.01 and 5.5.
 
 So here's how you'd include them all:
 
@@ -216,11 +218,3 @@ You can apply a form like layout to verification pages by simply providing no in
     </fieldset>
 </form>
 ```
-
-## Contacting the Developer
-
-There are several ways to contact PForm's developer with your questions, concerns, comments, bug reports, or feature requests.
-
-- PForm is part of [SciActive on Twitter](http://twitter.com/SciActive).
-- Bug reports, questions, and feature requests can be filed at the [issues page](https://github.com/sciactive/pform/issues).
-- You can directly [email Hunter Perrin](mailto:hunter@sciactive.com), the creator of PForm.
