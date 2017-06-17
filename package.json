@@ -1,0 +1,33 @@
+{
+  "name": "pform",
+  "version": "3.2.2",
+  "description": "Pixel perfect CSS form layouts.",
+  "main": "css/pform.css",
+  "scripts": {
+    "build": "npm run build-pform && npm run build-bootstrap && npm run build-ielt6 && npm run build-ielt8",
+    "build-pform": "lessc less/pform.less > css/pform.css",
+    "build-bootstrap": "lessc less/pform-bootstrap.less > css/pform-bootstrap.css",
+    "build-ielt6": "lessc less/pform-ie-lt-6.less > css/pform-ie-lt-6.css",
+    "build-ielt8": "lessc less/pform-ie-lt-8.less > css/pform-ie-lt-8.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sciactive/pform.git"
+  },
+  "keywords": [
+    "form",
+    "layout",
+    "html",
+    "css"
+  ],
+  "author": "Hunter Perrin <hperrin@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sciactive/pform/issues"
+  },
+  "homepage": "https://github.com/sciactive/pform#readme",
+  "devDependencies": {
+    "less": "^2.7.2"
+  }
+}

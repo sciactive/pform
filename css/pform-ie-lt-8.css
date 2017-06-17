@@ -1,18 +1,14 @@
 /* Required for IE 7 and lower. */
-
 .pf-form {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
-
 .pf-form fieldset {
   overflow: visible;
 }
-
 .pf-form .pf-element {
   width: 100%;
 }
-
 .pf-form .pf-buttons {
   width: 550px;
 }

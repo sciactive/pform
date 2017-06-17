@@ -1,217 +1,185 @@
 /*
-PForm 3.2
+PForm 3.2.2
 
-license: http://www.gnu.org/licenses/gpl.html
-license: http://www.gnu.org/licenses/lgpl.html
-license: http://www.mozilla.org/MPL/MPL-1.1.html
+license: https://www.apache.org/licenses/LICENSE-2.0
 author: Hunter Perrin <hunter@sciactive.com>
 copyright: SciActive.com
 link: http://sciactive.com/pform/
 */
-
 .pf-form:after,
 .pf-form fieldset:after {
+  content: ".";
   display: block;
   height: 0;
   clear: both;
-  content: ".";
   visibility: hidden;
 }
-
 .pf-form fieldset {
   padding: 5.6px 10px 12px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
 }
-
 .pf-form fieldset.pf-group {
   display: block;
-  margin-bottom: 25px;
   clear: left;
+  margin-bottom: 25px;
 }
-
 .pf-form .pf-clearing {
-  height: 1px;
   clear: both;
+  height: 1px;
 }
-
 .pf-form .pf-element {
   float: left;
-  padding-bottom: 25px;
   clear: left;
+  padding-bottom: 25px;
 }
-
 .pf-form .pf-element.pf-full-width {
   width: 100%;
 }
-
 .pf-form .pf-element .pf-label,
 .pf-form .pf-element .pf-note {
-  float: left;
   width: 180px;
+  float: left;
 }
-
 .pf-form .pf-element .pf-note {
   margin-top: .5em;
   clear: left;
   font-size: 75%;
   opacity: .8;
 }
-
 .pf-form .pf-element .pf-required {
-  color: #ff0000;
+  color: #f00;
 }
-
 .pf-form .pf-element .pf-completed,
 .pf-form .pf-element.pf-completed .pf-required {
-  color: #00cc00;
+  color: #0c0;
 }
-
 .pf-form .pf-element .pf-field {
   float: none;
   margin-left: 15px;
 }
-
 .pf-form .pf-element .pf-field.pf-full-width {
   display: block;
   margin-left: 195px;
 }
-
 .pf-form .pf-element .pf-group {
-  display: block;
   margin-left: 180px;
+  display: block;
 }
-
 .pf-form .pf-element .pf-group .pf-note {
   display: inline;
   width: auto;
   margin-top: 0;
-  clear: none;
   text-align: left;
+  clear: none;
 }
-
 .pf-form.pf-labels-right .pf-label,
 .pf-form .pf-labels-right .pf-label,
 .pf-form.pf-labels-right .pf-note,
 .pf-form .pf-labels-right .pf-note {
   text-align: right;
 }
-
 .pf-form .pf-labels-right.pf-note,
 .pf-form .pf-labels-right.pf-label {
   text-align: right;
 }
-
 .pf-form.pf-labels-left .pf-label,
 .pf-form .pf-labels-left .pf-label,
 .pf-form.pf-labels-left .pf-note,
 .pf-form .pf-labels-left .pf-note {
   text-align: left;
 }
-
 .pf-form .pf-labels-left.pf-note,
 .pf-form .pf-labels-left.pf-label {
   text-align: left;
 }
-
 .pf-form .pf-buttons {
+  clear: both;
   padding-bottom: 0;
   padding-left: 175px;
-  clear: both;
 }
-
 .pf-form .pf-buttons.pf-centered {
   width: 100%;
   padding-left: 0;
   text-align: center;
 }
-
 .pf-form .pf-buttons .pf-button {
   float: none;
-  margin-bottom: 20px;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
-
 .pf-form .pf-heading {
   width: 100%;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 0;
   margin-bottom: 20px;
-  border-bottom: 1px solid #cccccc;
 }
-
 .pf-form.pf-layout-block .pf-element .pf-label,
 .pf-form .pf-layout-block .pf-element .pf-label,
 .pf-form .pf-element.pf-layout-block .pf-label,
 .pf-form.pf-layout-block .pf-element .pf-note,
 .pf-form .pf-layout-block .pf-element .pf-note,
 .pf-form .pf-element.pf-layout-block .pf-note {
-  display: block;
-  float: none;
   width: auto;
+  float: none;
+  display: block;
   margin-bottom: 5px;
 }
-
 .pf-form.pf-layout-block .pf-element .pf-group,
 .pf-form .pf-layout-block .pf-element .pf-group,
 .pf-form .pf-element.pf-layout-block .pf-group {
   margin-left: 0;
 }
-
 .pf-form.pf-layout-block .pf-element .pf-group .pf-note,
 .pf-form .pf-layout-block .pf-element .pf-group .pf-note,
 .pf-form .pf-element.pf-layout-block .pf-group .pf-note {
   display: inline;
   width: auto;
   margin-top: 0;
-  clear: none;
   text-align: left;
+  clear: none;
 }
-
 .pf-form.pf-layout-block .pf-element .pf-field,
 .pf-form .pf-layout-block .pf-element .pf-field,
 .pf-form .pf-element.pf-layout-block .pf-field {
   float: none;
   margin-left: 0;
 }
-
 .pf-form.pf-layout-block .pf-element .pf-field.pf-full-width,
 .pf-form .pf-layout-block .pf-element .pf-field.pf-full-width,
 .pf-form .pf-element.pf-layout-block .pf-field.pf-full-width {
   display: block;
   margin-left: 0;
 }
-
 .pf-form.pf-layout-block .pf-buttons,
 .pf-form .pf-layout-block .pf-buttons,
 .pf-form .pf-buttons.pf-layout-block {
   padding-left: 0;
   margin-left: -20px;
 }
-
 @media print {
   .pf-form {
     display: block;
   }
 }
-
 @media (max-width: 480px) {
   .pf-form {
     display: block;
   }
   .pf-form .pf-element {
     float: none;
-    margin-bottom: 10px;
     clear: left;
+    margin-bottom: 10px;
   }
   .pf-form .pf-element.pf-full-width .pf-full-width {
     padding-right: .2em;
   }
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
-    display: block;
+    text-align: left;
     float: none;
     width: auto;
+    display: block;
     margin-bottom: .1em;
-    text-align: left;
   }
   .pf-form .pf-element .pf-field {
     margin-top: 5px;
@@ -220,8 +188,8 @@ link: http://sciactive.com/pform/
     margin-left: 0;
   }
   .pf-form .pf-element .pf-group {
-    display: block;
     margin-left: 0 !important;
+    display: block;
   }
   .pf-form .pf-buttons {
     padding-left: 0;
@@ -230,7 +198,6 @@ link: http://sciactive.com/pform/
     margin-top: 5px;
   }
 }
-
 @media (min-width: 481px) and (max-width: 767px) {
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
@@ -257,7 +224,6 @@ link: http://sciactive.com/pform/
     margin-left: -15px;
   }
 }
-
 @media (min-width: 1281px) and (max-width: 1839px) {
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
@@ -284,7 +250,6 @@ link: http://sciactive.com/pform/
     margin-left: -20px;
   }
 }
-
 @media (min-width: 1840px) {
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
