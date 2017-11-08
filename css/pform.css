@@ -1,5 +1,5 @@
 /*
-PForm 3.2.2
+PForm 3.3.0
 
 license: https://www.apache.org/licenses/LICENSE-2.0
 author: Hunter Perrin <hunter@sciactive.com>
@@ -227,19 +227,19 @@ link: http://sciactive.com/pform/
 @media (min-width: 1281px) and (max-width: 1839px) {
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
-    width: 230px;
+    width: 180px;
   }
   .pf-form .pf-element .pf-field {
     margin-left: 15px;
   }
   .pf-form .pf-element .pf-field.pf-full-width {
-    margin-left: 245px;
+    margin-left: 195px;
   }
   .pf-form .pf-element .pf-group {
-    margin-left: 230px;
+    margin-left: 180px;
   }
   .pf-form .pf-buttons {
-    padding-left: 225px;
+    padding-left: 175px;
   }
   .pf-form .pf-buttons .pf-button {
     margin-left: 20px;
@@ -253,26 +253,26 @@ link: http://sciactive.com/pform/
 @media (min-width: 1840px) {
   .pf-form .pf-element .pf-label,
   .pf-form .pf-element .pf-note {
-    width: 280px;
+    width: 180px;
   }
   .pf-form .pf-element .pf-field {
-    margin-left: 20px;
+    margin-left: 15px;
   }
   .pf-form .pf-element .pf-field.pf-full-width {
-    margin-left: 300px;
+    margin-left: 195px;
   }
   .pf-form .pf-element .pf-group {
-    margin-left: 280px;
+    margin-left: 180px;
   }
   .pf-form .pf-buttons {
-    padding-left: 275px;
+    padding-left: 175px;
   }
   .pf-form .pf-buttons .pf-button {
-    margin-left: 25px;
+    margin-left: 20px;
   }
   .pf-form.pf-layout-block .pf-buttons,
   .pf-form .pf-layout-block .pf-buttons,
   .pf-form .pf-buttons.pf-layout-block {
-    margin-left: -25px;
+    margin-left: -20px;
   }
 }

@@ -1,30 +1,30 @@
 {
-    "name": "sciactive/pform",
-    "description": "Pixel perfect CSS form layouts.",
-    "version": "3.2.2",
-    "type": "library",
-    "keywords": [
-        "form layout",
-        "html",
-        "css"
-    ],
-    "homepage": "http://sciactive.com/pform/",
-    "time": "2017-06-16",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Hunter Perrin",
-            "email": "hunter@sciactive.com",
-            "homepage": "https://github.com/hperrin",
-            "role": "Developer"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/sciactive/pform/issues",
-        "wiki": "https://github.com/sciactive/pform/wiki",
-        "source": "https://github.com/sciactive/pform"
-    },
-    "archive": {
-        "exclude": ["*.html", "bower.json", "includes"]
+  "name": "sciactive/pform",
+  "description": "Pixel perfect CSS form layouts.",
+  "version": "3.3.0",
+  "type": "library",
+  "keywords": [
+    "form layout",
+    "html",
+    "css"
+  ],
+  "homepage": "http://sciactive.com/pform/",
+  "time": "2017-11-08",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Hunter Perrin",
+      "email": "hunter@sciactive.com",
+      "homepage": "https://github.com/hperrin",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/sciactive/pform/issues",
+    "wiki": "https://github.com/sciactive/pform/wiki",
+    "source": "https://github.com/sciactive/pform"
+  },
+  "archive": {
+    "exclude": ["*.html", "bower.json", "includes"]
+  }
 }

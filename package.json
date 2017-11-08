@@ -1,6 +1,6 @@
 {
   "name": "pform",
-  "version": "3.2.2",
+  "version": "3.3.0",
   "description": "Pixel perfect CSS form layouts.",
   "main": "css/pform.css",
   "scripts": {

@@ -1,16 +1,16 @@
 /* Required for IE 7 and lower. */
 @import "variables.less";
 .pf-form {
-    overflow: hidden; // Hides an extended border.
-    height: 100%; // Makes IE6 enclose floats.
+  overflow: hidden; // Hides an extended border.
+  height: 100%; // Makes IE6 enclose floats.
 
-    fieldset {
-        overflow: visible; // IE7 will show scrollbars w/o this.
-    }
-    .pf-element {
-        width: 100%; // Positions the inputs
-    }
-    .pf-buttons {
-        width: @ie-buttons-width; // Keeps IE's broken box model from pushing the button box out.
-    }
+  fieldset {
+    overflow: visible; // IE7 will show scrollbars w/o this.
+  }
+  .pf-element {
+    width: 100%; // Positions the inputs
+  }
+  .pf-buttons {
+    width: @ie-buttons-width; // Keeps IE's broken box model from pushing the button box out.
+  }
 }
